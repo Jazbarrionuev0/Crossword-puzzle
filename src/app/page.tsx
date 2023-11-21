@@ -3,31 +3,28 @@ import CellContainer from "@/components/cells-container/CellsContainer";
 import Word from "@/components/word/Word";
 import WordsContainer from "@/components/words-container/WordsContainer";
 
- const Home = () => {
+const Home = () => {
 
-  let words:string[] = ['arbol', 'hotel', 'pileta', 'casa', 'caca', 'jaz' ]
+  let words: string[] = ['arbol', 'hotel', 'pileta', 'casa', 'caca', 'jaz']
 
 
 
 
   return (
-    <main>
+    <main className="root-page">
       <section className="tablero">
         <div className="up">
-          <WordsContainer orientation={true} words={words}/>
+          <WordsContainer orientation={true} words={words} />
         </div>
         <div className="down">
           <div className="left">
-            <WordsContainer orientation={false} words={words}/>
+            <WordsContainer orientation={false} words={words} />
           </div>
           <div className="right">
-             <CellContainer/>
+            <CellContainer />
           </div>
-         
         </div>
-        
       </section>
-
     </main>
   )
 }

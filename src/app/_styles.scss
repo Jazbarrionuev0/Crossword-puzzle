@@ -1,15 +1,26 @@
-.tablero {
+
+.root-page {
     display: flex;
-    flex-direction: column;
-    background-color: cadetblue;
-    width: 1040px;
-    .up {
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    .tablero {
         display: flex;
-        width: 100%;
-        justify-content: flex-end;
+        flex-direction: column;
+        background-color: cadetblue;
+        width: 800px;
+        border-radius: 15px;
+        
+        .up {
+            display: flex;
+            width: 100%;
+            justify-content: flex-end;
+        }
+        .down {
+            display: flex;
+        }
+        
     }
-    .down {
-        display: flex;
-    }
-   
+
 }

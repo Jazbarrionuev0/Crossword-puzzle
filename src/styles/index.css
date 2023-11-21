@@ -1,21 +1,31 @@
-html {
-  background-color: #333;
-  overflow-y: hidden;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.tablero {
+html {
+  background-color: #333;
+}
+
+.root-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.root-page .tablero {
   display: flex;
   flex-direction: column;
   background-color: cadetblue;
-  width: 1040px;
-  transform: scale(0.6) translateY(-300px);
+  width: 800px;
+  border-radius: 15px;
 }
-.tablero .up {
+.root-page .tablero .up {
   display: flex;
   width: 100%;
   justify-content: flex-end;
 }
-.tablero .down {
+.root-page .tablero .down {
   display: flex;
 }
 
@@ -23,9 +33,9 @@ html {
   background-color: #FB7DA8;
   padding: 10px;
   border-radius: 10px;
-  width: 100px;
+  width: 70px;
   text-align: center;
-  font-size: 20px;
+  font-size: 16px;
   text-transform: uppercase;
   font-weight: bold;
 }
@@ -47,16 +57,16 @@ html {
 
 .cells-container {
   display: grid;
-  grid-template-columns: repeat(6, 120px); /* 6 columnas con igual ancho */
-  grid-template-rows: repeat(6, 120px); /* 6 filas con igual altura */
-  gap: 20px; /* Espacio entre las celdas */
-  width: 600px; /* Ancho total del contenedor */
-  height: 600px; /* Altura total del contenedor */
-  padding: 10px;
+  grid-template-columns: repeat(6, 100px); /* 6 columnas con igual ancho */
+  grid-template-rows: repeat(6, 100px); /* 6 filas con igual altura */
+  width: 100%; /* Ancho total del contenedor */
+  height: 100%; /* Altura total del contenedor */
 }
 
 .words-container-component {
   display: flex;
+  width: 100%;
+  justify-content: flex-end;
 }
 .words-container-component .cell-container {
   display: flex;
@@ -72,9 +82,8 @@ html {
   margin: 10px;
   padding: 10px;
   border-radius: 10px;
-  width: 100px;
-  height: 100px;
-  font-size: 60px;
+  min-width: 60px;
+  font-size: 40px;
   text-transform: uppercase;
   font-weight: bold;
 }
@@ -88,5 +97,5 @@ html {
 }
 .vertical .cell-container .word-component {
   rotate: -90deg;
-  margin-left: -35px;
+  margin-left: -20px;
 }/*# sourceMappingURL=index.css.map */
