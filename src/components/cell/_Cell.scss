@@ -1,0 +1,15 @@
+.cell-component {
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    transition-duration: .2s;
+
+    &:hover {
+        color: rgb(0, 0, 0);
+    }
+}

@@ -1,0 +1,9 @@
+.cells-container {
+    display: grid;
+    grid-template-columns: repeat(6, 120px); /* 6 columnas con igual ancho */
+    grid-template-rows: repeat(6, 120px); /* 6 filas con igual altura */
+    gap: 20px; /* Espacio entre las celdas */
+    width: 600px; /* Ancho total del contenedor */
+    height: 600px; /* Altura total del contenedor */
+    padding: 10px;
+}
