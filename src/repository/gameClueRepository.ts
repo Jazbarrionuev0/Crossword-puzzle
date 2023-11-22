@@ -1,7 +1,7 @@
 import supabase from "@/utils/supabase";
-import { User } from "@/types/types";
+import { GameClue } from "@/types/types";
 
-const TABLE = 'users';
+const TABLE = 'games_clues';
 
 // GET      ---------------------------------
 

@@ -1,12 +1,15 @@
+// globals      -------------------------------------------
 @import './global';
 
+// pages        -------------------------------------------
 @import "../app/styles";
 @import "../app/login/styles";
 
-@import '../components/word/Words';
-@import '../components/score/Score';
+// components   -------------------------------------------
 @import '../components/cell/Cell';
 @import '../components/cells-container/Cells-container';
-@import '../components/words-container/WordsContainer';
+@import '../components/score/Score';
 @import '../components/user/User';
 @import '../components/users-container/Users-container';
+@import '../components/word/Words';
+@import '../components/words-container/WordsContainer';

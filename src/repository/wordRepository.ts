@@ -1,7 +1,7 @@
 import supabase from "@/utils/supabase";
-import { User } from "@/types/types";
+import { Word } from "@/types/types";
 
-const TABLE = 'users';
+const TABLE = 'words';
 
 // GET      ---------------------------------
 
