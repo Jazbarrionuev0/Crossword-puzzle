@@ -30,10 +30,10 @@ const UserContainer = ({ users }: props) => {
                 mainUser
                 userCoord={user.coord}
                 username={user.username}
-                style={i == 0 ? {top:0,left:0, borderRadius: '0 0 20px 0'} : 
-                i == 1 ? {top:0,right:0, borderRadius: '0 0 0 20px'} : 
-                i == 2 ? {bottom:0,left:0, borderRadius: '0 20px 0 0'} : 
-                {bottom: 0, right: 0, borderRadius: '20px 0 0 0'}}
+                style={i == 0 ? {top:0,left:0, borderRadius: '0 0 30px 0'} : 
+                i == 1 ? {top:0,right:0, borderRadius: '0 0 0 30px'} : 
+                i == 2 ? {bottom:0,left:0, borderRadius: '0 30px 0 0'} : 
+                {bottom: 0, right: 0, borderRadius: '30px 0 0 0'}}
                 icon={icons[i]}
             />
         )

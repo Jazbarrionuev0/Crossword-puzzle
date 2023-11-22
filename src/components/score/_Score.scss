@@ -1,0 +1,49 @@
+.score-component {
+    background-color: rgb(255, 255, 255,.1);
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 40px;
+
+    header {
+        display: flex;
+
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+
+            span {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                width: 60px;
+                height: 60px;
+                font-size: large;
+                font-weight: 500;
+                background-color: #26A349;
+            }
+
+            .failed {
+                background-color: #A71820;
+            }
+
+            h3 {
+                font-weight: 500;
+            }
+        }
+    }
+
+    footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h3 {
+            margin: 10px;
+        }
+    }
+}

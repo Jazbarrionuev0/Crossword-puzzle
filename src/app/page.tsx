@@ -1,5 +1,6 @@
 'use client'
 import CellContainer from "@/components/cells-container/CellsContainer";
+import Score from "@/components/score/Score";
 import User from "@/components/user/User";
 import UserContainer from "@/components/users-container/UserContainer";
 import Word from "@/components/word/Word";
@@ -15,7 +16,7 @@ const Home = () => {
   return (
     <main className="root-page">
       <div className="main-left">
-        <button className="clue-btn">clue</button>
+        <button className="clue-btn">CLUE</button>
       </div>
       <div className="center">
       <section className="tablero">
@@ -33,7 +34,7 @@ const Home = () => {
       </section>
       </div>
       <div className="main-right">
-        result
+        <Score/>
       </div>
       
       <UserContainer users={[{coord: 'A2', username: 'VALEN'},{coord: 'F5', username: 'MATU'},{coord: 'E4', username: 'JAZ'},{coord: 'A5', username: 'LUCA'}, ]}  />
