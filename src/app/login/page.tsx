@@ -6,12 +6,13 @@ let usersNames = ['MegaDoge', ]
 const Login = () => {
 
   const [username, setUsername] = useState('')
-
+  const [isJoin, setIsJoin] = useState(false)
+  
   useEffect(() => {
     setUsername(usersNames[0])
   }, [])
   
-
+  
   return (
     <main className="login-page">
         <section className='title'><p>CROSSWORD</p> <p>PUZZLES</p></section>
@@ -32,8 +33,23 @@ const Login = () => {
             placeholder='PLAYER GAME' 
           />
         </section>
-        <section className='button-container'><button className='game'>crear sala</button>
-        <button className='join'>unirse a sala</button></section>
+        <section className='button-container'>
+          <button 
+            className='game'
+          >crear sala</button>
+          <button 
+            className='join'
+            onClick={() => setIsJoin(prev => !prev)}
+          >unirse a sala</button>
+        </section>
+        {
+          isJoin && 
+          <section className='join-container'>
+            <input type="text" />
+            <button>Join</button>
+          </section>
+        }
+        
     </main>
   )
 }
