@@ -7,6 +7,14 @@ html {
   background: linear-gradient(180deg, #552CB7 0%, #FFC567 100%);
 }
 
+@keyframes breath {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
 .root-page {
   display: flex;
   justify-content: center;
@@ -22,6 +30,7 @@ html {
   width: 100%;
 }
 .root-page .main-left .clue-btn {
+  animation: breath 3s infinite;
   background-color: #FB7DA8;
   width: 200px;
   height: 200px;

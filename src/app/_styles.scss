@@ -1,4 +1,13 @@
 
+@keyframes breath {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+  }
+
 .root-page {
     display: flex;
     justify-content: center;
@@ -14,6 +23,7 @@
         width: 100%;
 
         .clue-btn {
+            animation: breath 3s infinite;
             background-color: #FB7DA8;
             width: 200px;
             height: 200px;
