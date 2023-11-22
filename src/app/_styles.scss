@@ -14,13 +14,19 @@
         width: 100%;
 
         .clue-btn {
-            background-color: grey;
+            background-color: #FB7DA8;
             width: 200px;
             height: 200px;
             border-radius: 50%;
             border: none;
             font-size: 50px;
             cursor: pointer;
+            transition: .2s;
+
+            &:hover {
+                background-color: #444;
+                transform: scale(.98);
+            }
         }
     }
 
@@ -35,9 +41,9 @@
         .tablero {
             display: flex;
             flex-direction: column;
-            background-color: cadetblue;
+            background-color: rgb(255, 255, 255,.1);
             width: 800px;
-            border-radius: 15px;
+            border-radius: 40px;
             
             .up {
                 display: flex;

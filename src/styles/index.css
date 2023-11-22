@@ -4,7 +4,7 @@
 }
 
 html {
-  background-color: #333;
+  background: linear-gradient(180deg, #552CB7 0%, #FFC567 100%);
 }
 
 .root-page {
@@ -22,13 +22,18 @@ html {
   width: 100%;
 }
 .root-page .main-left .clue-btn {
-  background-color: grey;
+  background-color: #FB7DA8;
   width: 200px;
   height: 200px;
   border-radius: 50%;
   border: none;
   font-size: 50px;
   cursor: pointer;
+  transition: 0.2s;
+}
+.root-page .main-left .clue-btn:hover {
+  background-color: #444;
+  transform: scale(0.98);
 }
 .root-page .center {
   height: 100%;
@@ -40,9 +45,9 @@ html {
 .root-page .center .tablero {
   display: flex;
   flex-direction: column;
-  background-color: cadetblue;
+  background-color: rgba(255, 255, 255, 0.1);
   width: 800px;
-  border-radius: 15px;
+  border-radius: 40px;
 }
 .root-page .center .tablero .up {
   display: flex;
@@ -135,6 +140,49 @@ html {
   font-weight: bold;
 }
 
+.score-component {
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 40px;
+}
+.score-component header {
+  display: flex;
+}
+.score-component header section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+.score-component header section span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: large;
+  font-weight: 500;
+  background-color: #26A349;
+}
+.score-component header section .failed {
+  background-color: #A71820;
+}
+.score-component header section h3 {
+  font-weight: 500;
+}
+.score-component footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.score-component footer h3 {
+  margin: 10px;
+}
+
 .cell-component {
   border-radius: 10px;
   display: flex;
@@ -198,7 +246,8 @@ html {
 .user-container {
   background-color: #058CD7;
   position: absolute;
-  padding: 30px;
+  padding: 40px;
+  width: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
