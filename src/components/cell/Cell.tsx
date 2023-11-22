@@ -2,9 +2,13 @@
 
 import React from 'react'
 
-const Cell = ({coord}:{coord:string}) => {
+interface Props {
+    coord: string;
+}
+
+const Cell: React.FC<Props> = ({ coord }) => {
     return (
-        <div className='cell-component' onClick={()=> {alert(coord)}}>
+        <div className='cell-component' onClick={() => { alert(coord) }}>
             x
         </div>
     )

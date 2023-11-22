@@ -1,18 +1,19 @@
 import React from 'react'
 import Word from '../word/Word'
 
-type props = {
+interface Props {
     orientation: boolean,
     words: string[]
 }
-const WordsContainer = ({ orientation, words }: props) => {
+
+const WordsContainer: React.FC<Props> = ({ orientation, words }) => {
 
     let output = words.map((word: string, i: number) => {
         let letters = ['A', 'B', 'C', 'D', 'E', 'F']
         return (
             <div className='cell-container' key={i}>
-                <div className='cell'>{orientation ? letters[i] : (i+1).toString()}</div>
-                <Word word={word} className={`word${i}`}/>
+                <div className='cell'>{orientation ? letters[i] : (i + 1).toString()}</div>
+                <Word word={word} className={`word${i}`} />
             </div>
         )
     })

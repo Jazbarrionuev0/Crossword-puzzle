@@ -1,12 +1,12 @@
 import React from 'react'
 
-type props = {
-    guessed: number,
-    failed: number,
-    round: number
+interface Props {
+    guessed: number;
+    failed: number;
+    round: number;
 }
 
-const Score: React.FC<props> = ({ guessed, failed, round }) => {
+const Score: React.FC<Props> = ({ guessed, failed, round }) => {
     return (
         <div className='score-component'>
             <header>

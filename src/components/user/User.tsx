@@ -2,23 +2,23 @@
 
 import React from "react";
 import Image from "next/image";
-type props = {
-    username: string,
-    userCoord: string,
-    mainUser: boolean,
-    icon: string,
-    style: React.CSSProperties | undefined
+
+interface Props {
+    username: string;
+    userCoord: string;
+    mainUser: boolean;
+    icon: string;
+    style: React.CSSProperties | undefined;
 }
 
-const User = ({username,userCoord,mainUser,style, icon}:props) => {
-    
+const User = ({ username, userCoord, mainUser, style, icon }: Props) => {
+
     return (
         <div className="user-container" style={style}>
             <div className="icon">
-                <Image 
-                    // src={"https://cdn-icons-png.flaticon.com/512/1674/1674229.png"} 
-                    src={icon} 
-                    alt={""} 
+                <Image
+                    src={icon}
+                    alt={""}
                     width={150}
                     height={150}
                 />

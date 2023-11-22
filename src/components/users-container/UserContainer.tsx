@@ -1,13 +1,9 @@
 import React from 'react'
 import User from '../user/User'
+import { UserInfo } from '@/types/types'
 
-type userInfo = {
-    username: string,
-    coord: string
-}
-
-type props = {
-    users: userInfo[]
+interface Props {
+    users: UserInfo[]
 }
 
 let icons = [
@@ -17,23 +13,36 @@ let icons = [
     `https://icon-library.com/images/avatar-icon/avatar-icon-7.jpg`
 ]
 
-const UserContainer = ({ users }: props) => {
-    
-    let style = {
-        backgroundColor: 'red'
-    }
+const UserContainer: React.FC<Props> = ({ users }) => {
 
-    let output = users.map((user: userInfo, i: number) => {
+    let upLeft = { top: 0, left: 0, borderRadius: '0 0 30px 0' }
+    let upRight = { top: 0, right: 0, borderRadius: '0 0 0 30px' }
+    let bottomLeft = { bottom: 0, left: 0, borderRadius: '0 30px 0 0' }
+    let bottomRight = { bottom: 0, right: 0, borderRadius: '30px 0 0 0' }
+
+    let output = users.map((user: UserInfo, i: number) => {
+        let style = {}
+
+        switch (i) {
+            case 0: style = upLeft;
+                break;
+            case 1: style = upRight;
+                break;
+            case 2: style = bottomLeft;
+                break;
+            case 3: style = bottomRight;
+                break;
+            default: style = {}
+                break;
+        }
+
         return (
             <User
                 key={i}
                 mainUser
                 userCoord={user.coord}
                 username={user.username}
-                style={i == 0 ? {top:0,left:0, borderRadius: '0 0 30px 0'} : 
-                i == 1 ? {top:0,right:0, borderRadius: '0 0 0 30px'} : 
-                i == 2 ? {bottom:0,left:0, borderRadius: '0 30px 0 0'} : 
-                {bottom: 0, right: 0, borderRadius: '30px 0 0 0'}}
+                style={style}
                 icon={icons[i]}
             />
         )
@@ -43,7 +52,6 @@ const UserContainer = ({ users }: props) => {
         <div>
             {output}
         </div>
-
     )
 }
 

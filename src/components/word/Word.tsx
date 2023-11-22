@@ -1,6 +1,11 @@
 import React from 'react'
 
-const Word = ({word, className}:{word:string,className:string}) => {
+interface Props {
+  word: string;
+  className: string;
+}
+
+const Word: React.FC<Props> = ({ word, className }) => {
   return (
     <div className={`word-component ${className}`}>
       {word}
