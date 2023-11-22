@@ -19,13 +19,19 @@
             height: 200px;
             border-radius: 50%;
             border: none;
-            font-size: 50px;
+            font-size: 65px;
             cursor: pointer;
             transition: .2s;
+            font-family: inherit;
 
             &:hover {
-                background-color: #444;
-                transform: scale(.98);
+                background-color: #f5447f;
+                transform: scale(.96);
+            }
+
+            &:active {
+                background-color: #f70e5c;
+                transform: scale(.92);
             }
         }
     }

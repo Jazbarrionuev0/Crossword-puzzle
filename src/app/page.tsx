@@ -16,7 +16,7 @@ const Home = () => {
   return (
     <main className="root-page">
       <div className="main-left">
-        <button className="clue-btn">CLUE</button>
+        <button className="clue-btn" onClick={() => alert('clue')}>CLUE</button>
       </div>
       <div className="center">
       <section className="tablero">
@@ -34,7 +34,7 @@ const Home = () => {
       </section>
       </div>
       <div className="main-right">
-        <Score/>
+        <Score guessed={12} failed={3} round={16}/>
       </div>
       
       <UserContainer users={[{coord: 'A2', username: 'VALEN'},{coord: 'F5', username: 'MATU'},{coord: 'E4', username: 'JAZ'},{coord: 'A5', username: 'LUCA'}, ]}  />
