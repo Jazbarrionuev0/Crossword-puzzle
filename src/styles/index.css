@@ -80,7 +80,11 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 300%;
+  font-size: 80px;
+}
+.login-page .title p {
+  color: white;
+  text-shadow: 4px 1px 1px black;
 }
 .login-page .image {
   width: 100%;
@@ -103,9 +107,24 @@ html {
   margin: 10px;
 }
 .login-page .name input {
-  height: 35px;
+  height: 60px;
   width: 500px;
-  border-radius: 5px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.332);
+  background-color: rgba(255, 255, 255, 0.16);
+  text-indent: 10px;
+  color: rgb(255, 255, 255);
+  font-size: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.login-page .name input::-moz-placeholder {
+  font-weight: lighter;
+  font-size: 20px;
+}
+.login-page .name input::placeholder {
+  font-weight: lighter;
+  font-size: 20px;
 }
 .login-page .button-container {
   width: 100%;
@@ -115,18 +134,33 @@ html {
   align-items: start;
 }
 .login-page .button-container button {
-  height: 45px;
-  width: 200px;
-  border-radius: 5px;
-  margin: 0 20px 0 20px;
+  height: 60px;
+  width: 230px;
+  border-radius: 15px;
   font-size: 30px;
   font-weight: bold;
+  font-family: inherit;
+  text-transform: uppercase;
 }
 .login-page .button-container .game {
   background-color: #FB7DA8;
+  margin-right: 10px;
+  transition-duration: 0.2s;
+}
+.login-page .button-container .game:hover {
+  background-color: #ffa0c0;
+  height: 65px;
+  width: 235px;
 }
 .login-page .button-container .join {
   background-color: #FFC567;
+  margin-left: 10px;
+  transition-duration: 0.2s;
+}
+.login-page .button-container .join:hover {
+  background-color: #ffd48f;
+  height: 65px;
+  width: 235px;
 }
 
 .word-component {
