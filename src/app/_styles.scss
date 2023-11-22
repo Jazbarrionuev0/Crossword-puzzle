@@ -1,12 +1,12 @@
-
 @keyframes breath {
-    0%, 100% {
-      transform: scale(1);
+    0%,
+    100% {
+        transform: scale(1);
     }
     50% {
-      transform: scale(1.1);
+        transform: scale(1.1);
     }
-  }
+}
 
 .root-page {
     display: flex;
@@ -24,24 +24,24 @@
 
         .clue-btn {
             animation: breath 3s infinite;
-            background-color: #FB7DA8;
+            background-color: #fb7da8;
             width: 200px;
             height: 200px;
             border-radius: 50%;
             border: none;
             font-size: 65px;
             cursor: pointer;
-            transition: .2s;
+            transition: 0.2s;
             font-family: inherit;
 
             &:hover {
                 background-color: #f5447f;
-                transform: scale(.96);
+                transform: scale(0.96);
             }
 
             &:active {
                 background-color: #f70e5c;
-                transform: scale(.92);
+                transform: scale(0.92);
             }
         }
     }
@@ -57,10 +57,10 @@
         .tablero {
             display: flex;
             flex-direction: column;
-            background-color: rgb(255, 255, 255,.1);
+            background-color: rgb(255, 255, 255, 0.1);
             width: 800px;
             border-radius: 40px;
-            
+
             .up {
                 display: flex;
                 width: 100%;
@@ -69,7 +69,6 @@
             .down {
                 display: flex;
             }
-            
         }
     }
 
@@ -81,5 +80,4 @@
         height: 100%;
         align-items: center;
     }
-        
 }

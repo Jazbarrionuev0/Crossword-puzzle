@@ -1,12 +1,7 @@
+import { Score } from '@/types/types';
 import React from 'react'
 
-interface Props {
-    guessed: number;
-    failed: number;
-    round: number;
-}
-
-const Score: React.FC<Props> = ({ guessed, failed, round }) => {
+const Score: React.FC<Score> = ({ guessed, failed, round }) => {
     return (
         <div className='score-component'>
             <header>

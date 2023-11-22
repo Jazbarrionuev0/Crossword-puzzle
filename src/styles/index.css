@@ -157,7 +157,7 @@ html {
   cursor: pointer;
 }
 .login-page .button-container .game {
-  background-color: #FB7DA8;
+  background-color: #fb7da8;
   margin-right: 10px;
   transition-duration: 0.2s;
 }
@@ -167,7 +167,7 @@ html {
   width: 235px;
 }
 .login-page .button-container .join {
-  background-color: #FFC567;
+  background-color: #ffc567;
   margin-left: 10px;
   transition-duration: 0.2s;
 }

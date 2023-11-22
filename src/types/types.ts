@@ -43,3 +43,9 @@ export type UserInfo = {
     username: string,
     coord: string
 }
+
+export type Score = {
+    guessed: number,
+    failed: number,
+    round: number
+}
