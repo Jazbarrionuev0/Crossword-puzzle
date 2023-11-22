@@ -61,6 +61,69 @@ html {
   align-items: center;
 }
 
+.login-page {
+  background: rgb(253, 90, 70);
+  background: linear-gradient(180deg, rgb(253, 90, 70) 35%, rgb(5, 140, 215) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.login-page .title {
+  width: 100%;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 300%;
+}
+.login-page .image {
+  width: 100%;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+.login-page .image .img-login {
+  width: 200px;
+  border-radius: 50%;
+}
+.login-page .name {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+.login-page .name input {
+  height: 35px;
+  width: 500px;
+  border-radius: 5px;
+}
+.login-page .button-container {
+  width: 100%;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+.login-page .button-container button {
+  height: 45px;
+  width: 200px;
+  border-radius: 5px;
+  margin: 0 20px 0 20px;
+  font-size: 30px;
+  font-weight: bold;
+}
+.login-page .button-container .game {
+  background-color: #FB7DA8;
+}
+.login-page .button-container .join {
+  background-color: #FFC567;
+}
+
 .word-component {
   background-color: #FB7DA8;
   padding: 10px;

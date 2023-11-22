@@ -1,0 +1,68 @@
+.login-page {
+    background: rgb(253,90,70);
+    background: linear-gradient(180deg, rgba(253,90,70,1) 35%, rgba(5,140,215,1) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .title {
+        width: 100%;
+        height: 30vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 300%;
+    }
+    .image{
+        width: 100%;
+        height: 30vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px;
+
+        .img-login {
+            width: 200px;
+            border-radius: 50%;
+        }
+    }
+    .name {
+        width: 100%;
+        height: 10vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+
+        input {
+            height: 35px;
+            width: 500px;
+            border-radius: 5px;
+        }
+    }
+    .button-container {
+        width: 100%;
+        height: 30vh;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        
+        button {
+            height: 45px;
+            width: 200px;
+            border-radius: 5px;
+            margin: 0 20px 0 20px;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .game {
+            background-color: #FB7DA8;
+       }
+        .join {
+            background-color: #FFC567;
+        }
+        
+    }
+}
+
