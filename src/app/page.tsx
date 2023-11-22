@@ -14,6 +14,10 @@ const Home = () => {
 
   return (
     <main className="root-page">
+      <div className="main-left">
+        <button>clue</button>
+      </div>
+      <div className="center">
       <section className="tablero">
         <div className="up">
           <WordsContainer orientation={true} words={words} />
@@ -27,6 +31,11 @@ const Home = () => {
           </div>
         </div>
       </section>
+      </div>
+      <div className="main-right">
+        result
+      </div>
+      
       <UserContainer users={[{coord: 'A2', username: 'VALEN'},{coord: 'F5', username: 'MATU'},{coord: 'E4', username: 'JAZ'},{coord: 'A5', username: 'LUCA'}, ]}  />
     </main>
   )

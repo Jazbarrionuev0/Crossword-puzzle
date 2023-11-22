@@ -19,8 +19,8 @@ const User = ({username,userCoord,mainUser,style, icon}:props) => {
                     // src={"https://cdn-icons-png.flaticon.com/512/1674/1674229.png"} 
                     src={icon} 
                     alt={""} 
-                    width={80}
-                    height={80}
+                    width={120}
+                    height={120}
                 />
 
             </div>
