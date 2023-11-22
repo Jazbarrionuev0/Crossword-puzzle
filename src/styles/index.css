@@ -77,8 +77,6 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100vh;
-  width: 100vw;
 }
 .login-page .title {
   width: 100%;
@@ -94,6 +92,8 @@ html {
   text-shadow: 4px 1px 1px black;
 }
 .login-page .image {
+  width: 100%;
+  height: 30vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -104,6 +104,8 @@ html {
   border-radius: 50%;
 }
 .login-page .name {
+  width: 100%;
+  height: 10vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -265,6 +267,7 @@ html {
   padding: 10px;
   border-radius: 10px;
   min-width: 60px;
+  min-height: 60px;
   font-size: 40px;
   text-transform: uppercase;
   font-weight: bold;
