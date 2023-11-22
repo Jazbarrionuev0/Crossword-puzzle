@@ -1,17 +1,16 @@
 'use client'
 import CellContainer from "@/components/cells-container/CellsContainer";
 import Score from "@/components/score/Score";
-import User from "@/components/user/User";
 import UserContainer from "@/components/users-container/UserContainer";
-import Word from "@/components/word/Word";
 import WordsContainer from "@/components/words-container/WordsContainer";
+import { getRandomCode } from "@/utils/functions";
 
 const Home = () => {
 
   let words: string[] = ['arbol', 'hotel', 'pileta', 'casa', 'caca', 'jaz']
 
 
-
+  console.log(getRandomCode());
 
   return (
     <main className="root-page">

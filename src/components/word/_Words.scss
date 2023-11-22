@@ -1,3 +1,16 @@
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+$duration: .5s;
+
 .word-component {
     background-color:  #FB7DA8;
     padding: 10px;
@@ -7,4 +20,29 @@
     font-size: 16px;
     text-transform: uppercase;
     font-weight: bold;
+    opacity: 0;
+}
+
+.word0 {
+    animation: bounceIn $duration forwards 0s;
+}
+
+.word1 {
+    animation: bounceIn $duration forwards .1s;
+}
+
+.word2 {
+    animation: bounceIn $duration forwards .2s;
+}
+
+.word3 {
+    animation: bounceIn $duration forwards .3s;
+}
+
+.word4 {
+    animation: bounceIn $duration forwards .4s;
+}
+
+.word5 {
+    animation: bounceIn $duration forwards .5s;
 }

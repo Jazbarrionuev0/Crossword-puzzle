@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Word = ({word}:{word:string}) => {
+const Word = ({word, className}:{word:string,className:string}) => {
   return (
-    <div className='word-component'>
+    <div className={`word-component ${className}`}>
       {word}
     </div>
   )

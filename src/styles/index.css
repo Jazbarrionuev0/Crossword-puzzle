@@ -181,6 +181,16 @@ html {
   justify-content: center;
 }
 
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 .word-component {
   background-color: #FB7DA8;
   padding: 10px;
@@ -190,6 +200,31 @@ html {
   font-size: 16px;
   text-transform: uppercase;
   font-weight: bold;
+  opacity: 0;
+}
+
+.word0 {
+  animation: bounceIn 0.5s forwards 0s;
+}
+
+.word1 {
+  animation: bounceIn 0.5s forwards 0.1s;
+}
+
+.word2 {
+  animation: bounceIn 0.5s forwards 0.2s;
+}
+
+.word3 {
+  animation: bounceIn 0.5s forwards 0.3s;
+}
+
+.word4 {
+  animation: bounceIn 0.5s forwards 0.4s;
+}
+
+.word5 {
+  animation: bounceIn 0.5s forwards 0.5s;
 }
 
 .score-component {

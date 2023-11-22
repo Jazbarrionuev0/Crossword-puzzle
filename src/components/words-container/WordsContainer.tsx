@@ -12,7 +12,7 @@ const WordsContainer = ({ orientation, words }: props) => {
         return (
             <div className='cell-container' key={i}>
                 <div className='cell'>{orientation ? letters[i] : (i+1).toString()}</div>
-                <Word word={word} />
+                <Word word={word} className={`word${i}`}/>
             </div>
         )
     })
