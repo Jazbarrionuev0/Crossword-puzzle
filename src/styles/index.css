@@ -98,4 +98,38 @@ html {
 .vertical .cell-container .word-component {
   rotate: -90deg;
   margin-left: -20px;
+}
+
+.user-container {
+  background-color: #058CD7;
+  position: absolute;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.user-container .icon {
+  background-color: #FFF;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.user-container .user-coord {
+  background-color: #FFC567;
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  margin-top: -45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+.user-container .username {
+  padding-top: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
 }/*# sourceMappingURL=index.css.map */

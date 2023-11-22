@@ -1,5 +1,7 @@
 'use client'
 import CellContainer from "@/components/cells-container/CellsContainer";
+import User from "@/components/user/User";
+import UserContainer from "@/components/users-container/UserContainer";
 import Word from "@/components/word/Word";
 import WordsContainer from "@/components/words-container/WordsContainer";
 
@@ -25,6 +27,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <UserContainer users={[{coord: 'A2', username: 'VALEN'},{coord: 'F5', username: 'MATU'},{coord: 'E4', username: 'JAZ'},{coord: 'A5', username: 'LUCA'}, ]}  />
     </main>
   )
 }
