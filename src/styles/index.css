@@ -14,15 +14,23 @@ html {
   height: 100vh;
 }
 .root-page .main-left {
-  border: 2px solid red;
   flex-grow: 1;
   display: flex;
   justify-content: center;
   height: 100%;
   align-items: center;
+  width: 100%;
+}
+.root-page .main-left .clue-btn {
+  background-color: grey;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: none;
+  font-size: 50px;
+  cursor: pointer;
 }
 .root-page .center {
-  border: 2px solid red;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -45,8 +53,8 @@ html {
   display: flex;
 }
 .root-page .main-right {
-  border: 2px solid red;
   flex-grow: 1;
+  width: 100%;
   display: flex;
   justify-content: center;
   height: 100%;

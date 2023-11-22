@@ -15,7 +15,7 @@ const Home = () => {
   return (
     <main className="root-page">
       <div className="main-left">
-        <button>clue</button>
+        <button className="clue-btn">clue</button>
       </div>
       <div className="center">
       <section className="tablero">
