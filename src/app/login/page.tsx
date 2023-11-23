@@ -1,5 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react'
+import LoopIcon from '@material-ui/icons/Loop';
 
 let usersNames = ['MegaDoge',]
 
@@ -16,7 +17,10 @@ const Login = () => {
   return (
     <main className="login-page">
       <section className='title'><p>CROSSWORD</p> <p>PUZZLES</p></section>
-      <section className='image'><img className='img-login' src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/LEGO_logo.svg/768px-LEGO_logo.svg.png" alt="" /></section>
+      <section className='image'>
+        <img className='img-login' src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/LEGO_logo.svg/768px-LEGO_logo.svg.png" alt="" />
+        <div className='random-img'>RAND</div>
+      </section>
       <section className='name'>
         <input
           type="text"
@@ -45,8 +49,8 @@ const Login = () => {
       {
         isJoin &&
         <section className='join-container'>
-          <input type="text" />
-          <button>Join</button>
+          <input type="text" placeholder='CODE'/>
+          <button className='join-button'>Join</button>
         </section>
       }
 

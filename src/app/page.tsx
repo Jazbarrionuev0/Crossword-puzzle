@@ -16,6 +16,10 @@ const Home = () => {
         <button className="clue-btn" onClick={() => alert('clue')}>CLUE</button>
       </div>
       <div className="center">
+        <div className="room-game">
+          <p>ROOM</p>
+          <p className="room-id">LJ12</p>
+        </div>
         <section className="tablero">
           <div className="up">
             <WordsContainer orientation={true} words={words} />

@@ -53,7 +53,20 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-
+        .room-game {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 10px;
+            margin: 10px 10px 30px 10px;
+            background-color: #fff8fa3b;
+            border-radius: 20px;
+            font-size: 30px;
+        }
+        .room-id {
+            padding-left: 10px;
+            font-size: 35px;
+        }
         .tablero {
             display: flex;
             flex-direction: column;

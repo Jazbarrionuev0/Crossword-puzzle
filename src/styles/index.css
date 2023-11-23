@@ -31,7 +31,7 @@ html {
 }
 .root-page .main-left .clue-btn {
   animation: breath 3s infinite;
-  background-color: #FB7DA8;
+  background-color: #fb7da8;
   width: 200px;
   height: 200px;
   border-radius: 50%;
@@ -55,6 +55,20 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.root-page .center .room-game {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  margin: 10px 10px 30px 10px;
+  background-color: rgba(255, 248, 250, 0.231372549);
+  border-radius: 20px;
+  font-size: 30px;
+}
+.root-page .center .room-id {
+  padding-left: 10px;
+  font-size: 35px;
 }
 .root-page .center .tablero {
   display: flex;
@@ -106,10 +120,15 @@ html {
   justify-content: center;
   align-items: center;
   margin: 20px;
+  position: relative;
 }
 .login-page .image .img-login {
   width: 200px;
   border-radius: 50%;
+}
+.login-page .image .random-img {
+  position: absolute;
+  bottom: 0;
 }
 .login-page .name {
   height: 10vh;
@@ -179,6 +198,151 @@ html {
 .login-page .join-container {
   display: flex;
   justify-content: center;
+  margin-top: 20px;
+}
+.login-page .join-container input {
+  height: 70px;
+  width: 150px;
+  text-align: center;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.332);
+  background-color: rgba(255, 255, 255, 0.16);
+  text-indent: 10px;
+  color: rgb(255, 255, 255);
+  font-size: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.login-page .join-container input::-moz-placeholder {
+  font-weight: lighter;
+  font-size: 20px;
+}
+.login-page .join-container input::placeholder {
+  font-weight: lighter;
+  font-size: 20px;
+}
+.login-page .join-container button {
+  background-color: #552CB7;
+  margin-left: 10px;
+  transition-duration: 0.2s;
+  height: 70px;
+  width: 130px;
+  border-radius: 15px;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: inherit;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+}
+.login-page .join-container button:hover {
+  background-color: #6a4ab6;
+  height: 65px;
+  width: 135px;
+}
+
+.cell-component {
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition-duration: 0.2s;
+}
+.cell-component:hover {
+  color: rgb(0, 0, 0);
+}
+
+.cells-container {
+  display: grid;
+  grid-template-columns: repeat(6, 100px); /* 6 columnas con igual ancho */
+  grid-template-rows: repeat(6, 100px); /* 6 filas con igual altura */
+  width: 100%; /* Ancho total del contenedor */
+  height: 100%; /* Altura total del contenedor */
+}
+
+.score-component {
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 40px;
+}
+.score-component header {
+  display: flex;
+}
+.score-component header section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+.score-component header section span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  font-size: large;
+  font-weight: 500;
+  background-color: #26A349;
+}
+.score-component header section .failed {
+  background-color: #A71820;
+}
+.score-component header section h3 {
+  font-size: 24px;
+  font-weight: 500;
+}
+.score-component footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.score-component footer h3 {
+  margin: 10px;
+  font-size: 32px;
+}
+
+.user-container {
+  background-color: #058CD7;
+  position: absolute;
+  padding: 20px 40px;
+  width: 10vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.user-container .icon {
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.user-container .user-coord {
+  background-color: #FFC567;
+  width: 100px;
+  height: 100px;
+  font-size: 64px;
+  border-radius: 10px;
+  margin-top: -45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+.user-container .username {
+  padding-top: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 @keyframes bounceIn {
@@ -227,74 +391,6 @@ html {
   animation: bounceIn 0.5s forwards 0.5s;
 }
 
-.score-component {
-  background-color: rgba(255, 255, 255, 0.1);
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-  border-radius: 40px;
-}
-.score-component header {
-  display: flex;
-}
-.score-component header section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-}
-.score-component header section span {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  width: 80px;
-  height: 80px;
-  font-size: large;
-  font-weight: 500;
-  background-color: #26A349;
-}
-.score-component header section .failed {
-  background-color: #A71820;
-}
-.score-component header section h3 {
-  font-size: 24px;
-  font-weight: 500;
-}
-.score-component footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.score-component footer h3 {
-  margin: 10px;
-  font-size: 32px;
-}
-
-.cell-component {
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 35px;
-  font-weight: bold;
-  color: rgb(255, 255, 255);
-  cursor: pointer;
-  transition-duration: 0.2s;
-}
-.cell-component:hover {
-  color: rgb(0, 0, 0);
-}
-
-.cells-container {
-  display: grid;
-  grid-template-columns: repeat(6, 100px); /* 6 columnas con igual ancho */
-  grid-template-rows: repeat(6, 100px); /* 6 filas con igual altura */
-  width: 100%; /* Ancho total del contenedor */
-  height: 100%; /* Altura total del contenedor */
-}
-
 .words-container-component {
   display: flex;
   width: 100%;
@@ -331,40 +427,4 @@ html {
 .vertical .cell-container .word-component {
   rotate: -90deg;
   margin-left: -20px;
-}
-
-.user-container {
-  background-color: #058CD7;
-  position: absolute;
-  padding: 20px 40px;
-  width: 10vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.user-container .icon {
-  background-color: rgba(255, 255, 255, 0.4);
-  border-radius: 50%;
-  width: 150px;
-  height: 150px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.user-container .user-coord {
-  background-color: #FFC567;
-  width: 100px;
-  height: 100px;
-  font-size: 64px;
-  border-radius: 10px;
-  margin-top: -45px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-}
-.user-container .username {
-  padding-top: 10px;
-  text-transform: uppercase;
-  font-weight: bold;
 }/*# sourceMappingURL=index.css.map */

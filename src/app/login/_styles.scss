@@ -9,7 +9,6 @@
 
     .title {
         width: 100%;
-        //height: 30vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -21,20 +20,23 @@
         }
     }
     .image {
-        //width: 100%;
-        //height: 30vh;
         display: flex;
         justify-content: center;
         align-items: center;
         margin: 20px;
+        position: relative;
 
         .img-login {
             width: 200px;
             border-radius: 50%;
         }
+        .random-img {
+            position: absolute;
+            bottom: 0;
+            
+        }
     }
     .name {
-        //width: 100%;
         height: 10vh;
         display: flex;
         justify-content: center;
@@ -45,7 +47,6 @@
             height: 60px;
             width: 500px;
             border-radius: 15px;
-            //.opacity: 0.2;
             border: 1px solid rgba(255, 255, 255, 0.332);
             background-color: rgba(255, 255, 255, 0.16);
             text-indent: 10px;
@@ -61,7 +62,6 @@
     }
     .button-container {
         width: 100%;
-        //height: 30vh;
         margin: 30px 0;
         display: flex;
         justify-content: center;
@@ -103,5 +103,43 @@
     .join-container {
         display: flex;
         justify-content: center;
+        margin-top: 20px;
+        input {
+            height: 70px;
+            width: 150px;
+            text-align: center;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.332);
+            background-color: rgba(255, 255, 255, 0.16);
+            text-indent: 10px;
+            color: rgb(255, 255, 255);
+            font-size: 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        input::placeholder {
+            font-weight: lighter;
+            font-size: 20px;
+        }
+        button {
+            background-color: #552CB7;
+            margin-left: 10px;
+            transition-duration: 0.2s;
+            height: 70px;
+            width: 130px;
+            border-radius: 15px;
+            font-size: 30px;
+            font-weight: bold;
+            font-family: inherit;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+
+        }
+        button:hover {
+            background-color: #6a4ab6;
+            height: 65px;
+            width: 135px;
+        }
     }
 }
