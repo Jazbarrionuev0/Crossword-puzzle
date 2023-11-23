@@ -1,6 +1,5 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import LoopIcon from '@material-ui/icons/Loop';
 
 let usersNames = ['MegaDoge',]
 
