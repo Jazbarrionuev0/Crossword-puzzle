@@ -1,10 +1,11 @@
 import supabase from '@/utils/supabase';
 import { Game } from '@/types/types';
 import { IGameRepository } from './interfaces/IGameRepository';
+import { IRepository } from './interfaces/IRepository';
 
 const TABLE = 'games'
 
-class GameRepository implements IGameRepository<Game> {
+export default class GameRepository implements IGameRepository<Game>, IRepository<Game> {
   private _supabase;
 
   constructor() {
@@ -58,7 +59,7 @@ class GameRepository implements IGameRepository<Game> {
   *   console.error('Error getting game by ID:', error.message);
   * }
   */
-  public async GetGameById(id: number): Promise<Game | null> {
+  public async GetById(id: number): Promise<Game | null> {
     try {
       const { data, error } =
         await this._supabase
@@ -125,7 +126,7 @@ class GameRepository implements IGameRepository<Game> {
   *   console.error('Error getting games by IDs:', error.message);
   * }
   */
-  public async GetGamesByIds(ids: number[]): Promise<Game[]> {
+  public async GetByIds(ids: number[]): Promise<Game[]> {
     try {
       const { data, error } = await this._supabase
         .from(TABLE)
@@ -253,5 +254,3 @@ class GameRepository implements IGameRepository<Game> {
     }
   }
 }
-
-export default GameRepository;
