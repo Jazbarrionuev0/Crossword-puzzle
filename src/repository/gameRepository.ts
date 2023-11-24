@@ -2,6 +2,7 @@ import supabase from '@/utils/supabase';
 import { Game } from '@/types/types';
 import { IGameRepository } from './interfaces/IGameRepository';
 import { IRepository } from './interfaces/IRepository';
+import { GetAll, GetById } from './Repository';
 
 const TABLE = 'games'
 
@@ -11,6 +12,8 @@ export default class GameRepository implements IGameRepository<Game>, IRepositor
   constructor() {
     this._supabase = supabase;
   }
+
+  //#region Common Repository
 
   /**
   * Retrieves all records from the 'games' table stored in Supabase.
@@ -28,18 +31,7 @@ export default class GameRepository implements IGameRepository<Game>, IRepositor
   * }
   */
   public async GetAll(): Promise<Game[]> {
-    try {
-      const { data, error } = await this._supabase
-        .from(TABLE)
-        .select();
-      if (error) {
-        throw new Error(`Error fetching data: ${error.message}`);
-      }
-      return data;
-    } catch (error) {
-      console.error('Error in getAll:', error);
-      throw error;
-    }
+    return await GetAll(this._supabase,TABLE);
   }
 
   /**
@@ -60,54 +52,10 @@ export default class GameRepository implements IGameRepository<Game>, IRepositor
   * }
   */
   public async GetById(id: number): Promise<Game | null> {
-    try {
-      const { data, error } =
-        await this._supabase
-          .from(TABLE)
-          .select()
-          .eq('id', id);
-      if (error) {
-        throw new Error(`Error fetching games: ${error.message}`);
-      }
-      return data[0];
-    } catch (error) {
-      console.error('Error in GetGameById:', error);
-      throw error;
-    }
+    return await GetById(this._supabase, TABLE, id);
   }
 
-  /**
-  * Retrieves a single game record from the 'games' table stored in Supabase based on the provided game code.
-  * 
-  * @param {string} code - The unique code of the game to retrieve.
-  * @returns {Promise<Game | null>} A promise that resolves to a `Game` object representing the retrieved game, or `null` if no matching record is found.
-  * @throws {Error} If an error occurs during the data retrieval process.
-  * 
-  * @example
-  * // Usage example:
-  * try {
-  *   const gameCode = 'ABC123';
-  *   const game = await yourInstance.GetGameByCode(gameCode);
-  *   console.log('Game by code:', game);
-  * } catch (error) {
-  *   console.error('Error getting game by code:', error.message);
-  * }
-  */
-  public async GetGameByCode(code: string): Promise<Game | null> {
-    try {
-      const { data, error } = await this._supabase
-        .from(TABLE)
-        .select()
-        .eq('code', code);
-      if (error) {
-        throw new Error(`Error fetching games: ${error.message}`);
-      }
-      return data[0];
-    } catch (error) {
-      console.error('Error in GetGameByCode:', error);
-      throw error;
-    }
-  }
+  
 
   /**
   * Retrieves multiple game records from the 'games' table stored in Supabase based on the provided array of game IDs.
@@ -253,4 +201,43 @@ export default class GameRepository implements IGameRepository<Game>, IRepositor
       throw error;
     }
   }
+
+  //#endregion
+
+  //#region IGameRepository
+
+  /**
+  * Retrieves a single game record from the 'games' table stored in Supabase based on the provided game code.
+  * 
+  * @param {string} code - The unique code of the game to retrieve.
+  * @returns {Promise<Game | null>} A promise that resolves to a `Game` object representing the retrieved game, or `null` if no matching record is found.
+  * @throws {Error} If an error occurs during the data retrieval process.
+  * 
+  * @example
+  * // Usage example:
+  * try {
+  *   const gameCode = 'ABC123';
+  *   const game = await yourInstance.GetGameByCode(gameCode);
+  *   console.log('Game by code:', game);
+  * } catch (error) {
+  *   console.error('Error getting game by code:', error.message);
+  * }
+  */
+  public async GetGameByCode(code: string): Promise<Game | null> {
+    try {
+      const { data, error } = await this._supabase
+        .from(TABLE)
+        .select()
+        .eq('code', code);
+      if (error) {
+        throw new Error(`Error fetching games: ${error.message}`);
+      }
+      return data[0];
+    } catch (error) {
+      console.error('Error in GetGameByCode:', error);
+      throw error;
+    }
+  }
+
+  //#endregion
 }
