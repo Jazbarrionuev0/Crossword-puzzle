@@ -1,8 +1,8 @@
 import supabase from "@/utils/supabase";
 import { UserGame } from "@/types/types";
-import { Delete, Edit, GetAll, GetById, GetByIds, Insert } from "./Repository";
 import { IRepository } from "./interfaces/IRepository";
 import { IUserGameRepository } from "./interfaces/IUserGameRepository";
+import { Delete, Edit, GetAll, GetById, GetByIds, Insert } from "./Repository";
 
 const TABLE = 'users_games';
 type Object = UserGame
@@ -47,7 +47,7 @@ export default class UserGameRepository implements IRepository<Object>, IUserGam
     public async GetUserGameByUserId(userId: number): Promise<UserGame | null> {
         throw new Error("Method not implemented.");
     }
-    
+
     public async GetUserGameByGameId(gameId: number): Promise<UserGame | null> {
         throw new Error("Method not implemented.");
     }

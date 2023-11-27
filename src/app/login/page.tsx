@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-
-let usersNames = ['MegaDoge',]
+import { userNames, randomUserName } from '@/utils/userNames'
+import LoopIcon from '@mui/icons-material/Loop';
 
 const Login = () => {
 
@@ -9,7 +9,7 @@ const Login = () => {
   const [isJoin, setIsJoin] = useState(false)
 
   useEffect(() => {
-    setUsername(usersNames[0])
+    setUsername(randomUserName)
   }, [])
 
 
@@ -18,14 +18,14 @@ const Login = () => {
       <section className='title'><p>CROSSWORD</p> <p>PUZZLES</p></section>
       <section className='image'>
         <img className='img-login' src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/LEGO_logo.svg/768px-LEGO_logo.svg.png" alt="" />
-        <div className='random-img'>RAND</div>
+        <div className='random-img'><LoopIcon className='icon'/></div>
       </section>
       <section className='name'>
         <input
           type="text"
           value={username}
           onClick={() => {
-            if (username == usersNames[0]) {
+            if (userNames.includes(username)) {
               console.log('tes')
               setUsername('')
             }
@@ -36,19 +36,21 @@ const Login = () => {
           placeholder='PLAYER GAME'
         />
       </section>
-      <section className='button-container'>
-        <button
-          className='game'
-        >crear sala</button>
-        <button
-          className='join'
-          onClick={() => setIsJoin(prev => !prev)}
-        >unirse a sala</button>
+      <section className='button-row'>
+        <div className="button-container">
+          <button
+            className='game'
+          >crear sala</button>
+          <button
+            className='join'
+            onClick={() => setIsJoin(prev => !prev)}
+          >unirse a sala</button>
+        </div>
       </section>
       {
         isJoin &&
         <section className='join-container'>
-          <input type="text" placeholder='CODE'/>
+          <input maxLength={4} type="text" placeholder='CODE'/>
           <button className='join-button'>Join</button>
         </section>
       }

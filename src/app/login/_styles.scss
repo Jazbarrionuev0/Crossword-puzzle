@@ -23,7 +23,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 20px;
+        margin: 20px 0;
         position: relative;
 
         .img-login {
@@ -33,6 +33,16 @@
         .random-img {
             position: absolute;
             bottom: 0;
+            background-color: #FFF;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 4px;
+
+            .icon {
+                font-size: 32px;
+            }
             
         }
     }
@@ -41,7 +51,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 10px;
 
         input {
             height: 60px;
@@ -60,13 +69,20 @@
             font-size: 20px;
         }
     }
-    .button-container {
-        width: 100%;
-        margin: 30px 0;
+
+    .button-row {
+        width: 100vw;
         display: flex;
         justify-content: center;
-        align-items: start;
 
+        .button-container {
+            width: 100%;
+            margin: 30px 0;
+            display: flex;
+            justify-content: space-between;
+            width: 500px;
+        align-items: start;
+        
         button {
             height: 60px;
             width: 230px;
@@ -77,29 +93,36 @@
             text-transform: uppercase;
             border: none;
             cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            &:hover {
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
         }
         .game {
             background-color: #fb7da8;
-            margin-right: 10px;
+            //margin-right: 10px;
             transition-duration: 0.2s;
         }
         .game:hover {
             background-color: #ffa0c0;
-            height: 65px;
-            width: 235px;
+            transform: scale(1.05);
+            //height: 65px;
+            //width: 235px;
         }
         .join {
             background-color: #ffc567;
-            margin-left: 10px;
+            //margin-left: 10px;
             transition-duration: 0.2s;
         }
         .join:hover {
             background-color: #ffd48f;
-            height: 65px;
-            width: 235px;
+            transform: scale(1.05);
+            //height: 65px;
+            //width: 235px;
         }
     }
-
+}
+    
     .join-container {
         display: flex;
         justify-content: center;
@@ -140,6 +163,44 @@
             background-color: #6a4ab6;
             height: 65px;
             width: 135px;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .login-page {
+        .title {
+            font-size: 14vw;
+        }
+
+        .image {
+            .img-login {
+                width: 100px
+            }
+        }
+
+        .name {
+            width: 100vw;
+            padding: 10px;          
+            input {
+                width: 90vw;
+                margin-right: 20px;
+            }
+        }
+
+        .button-row {
+            
+            .button-container {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 10px;
+
+                button {
+                    width: 100%;
+                    margin: 10px;
+                }
+            }
         }
     }
 }

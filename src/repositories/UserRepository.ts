@@ -1,13 +1,13 @@
 import supabase from "@/utils/supabase";
-import { UserCoord } from "@/types/types";
-import { Delete, Edit, GetAll, GetById, GetByIds, Insert } from "./Repository";
+import { User } from "@/types/types";
 import { IRepository } from "./interfaces/IRepository";
-import { IUserCoordRepository } from "./interfaces/IUserCoordRepository";
+import { IUserRepository } from "./interfaces/IUserRepository";
+import { Delete, Edit, GetAll, GetById, GetByIds, Insert } from "./Repository";
 
-const TABLE = 'users_coords';
-type Object = UserCoord
+const TABLE = 'users';
+type Object = User
 
-export default class UserCoordRepository implements IRepository<Object>, IUserCoordRepository<Object> {
+export default class UserRepository implements IRepository<Object>, IUserRepository<Object> {
     private _supabase;
 
     constructor() {
@@ -42,13 +42,9 @@ export default class UserCoordRepository implements IRepository<Object>, IUserCo
     
     //#endregion
 
-    //#region IUserCoordRepository
+    //#region IUserRepository
 
-    public async GetUserCoordByUserId(userId: number): Promise<UserCoord | null> {
-        throw new Error("Method not implemented.");
-    }
-    
-    public async GetUserCoordByCoordId(coordId: number): Promise<UserCoord | null> {
+    public async GetUserByName(name: string): Promise<User | null> {
         throw new Error("Method not implemented.");
     }
 

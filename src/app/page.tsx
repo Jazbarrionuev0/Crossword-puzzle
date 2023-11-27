@@ -3,15 +3,12 @@ import CellContainer from "@/components/cells-container/CellsContainer";
 import Score from "@/components/score/Score";
 import UserContainer from "@/components/users-container/UserContainer";
 import WordsContainer from "@/components/words-container/WordsContainer";
-import GameRepository from "@/repository/GameRepository";
 import { Score as ScoreType, UserInfo } from "@/types/types";
 
 const Home = () => {
   let words: string[] = ['arbol', 'hotel', 'pileta', 'casa', 'caca', 'jaz']
   let users: UserInfo[] = [{ coord: 'A2', username: 'VALEN' }, { coord: 'F5', username: 'MATU' }, { coord: 'E4', username: 'JAZ' }, { coord: 'A5', username: 'LUCA' },]
   let score: ScoreType = { guessed: 12, failed: 3, round: 16 }
-
-  let game = new GameRepository();
 
   return (
     <main className="root-page">

@@ -1,7 +1,7 @@
 import supabase from '@/utils/supabase';
 import { Game } from '@/types/types';
-import { IGameRepository } from './interfaces/IGameRepository';
 import { IRepository } from './interfaces/IRepository';
+import { IGameRepository } from './interfaces/IGameRepository';
 import { Delete, Edit, GetAll, GetById, GetByIds, Insert } from './Repository';
 
 const TABLE = 'games'

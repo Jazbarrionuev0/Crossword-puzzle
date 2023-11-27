@@ -3,10 +3,6 @@
   padding: 0;
 }
 
-html {
-  background: linear-gradient(180deg, #552CB7 0%, #FFC567 100%);
-}
-
 @keyframes breath {
   0%, 100% {
     transform: scale(1);
@@ -119,7 +115,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px;
+  margin: 20px 0;
   position: relative;
 }
 .login-page .image .img-login {
@@ -129,13 +125,21 @@ html {
 .login-page .image .random-img {
   position: absolute;
   bottom: 0;
+  background-color: #FFF;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+}
+.login-page .image .random-img .icon {
+  font-size: 32px;
 }
 .login-page .name {
   height: 10vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 10px;
 }
 .login-page .name input {
   height: 60px;
@@ -157,14 +161,20 @@ html {
   font-weight: lighter;
   font-size: 20px;
 }
-.login-page .button-container {
+.login-page .button-row {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+.login-page .button-row .button-container {
   width: 100%;
   margin: 30px 0;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  width: 500px;
   align-items: start;
 }
-.login-page .button-container button {
+.login-page .button-row .button-container button {
   height: 60px;
   width: 230px;
   border-radius: 15px;
@@ -174,26 +184,26 @@ html {
   text-transform: uppercase;
   border: none;
   cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-.login-page .button-container .game {
+.login-page .button-row .button-container button:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.login-page .button-row .button-container .game {
   background-color: #fb7da8;
-  margin-right: 10px;
   transition-duration: 0.2s;
 }
-.login-page .button-container .game:hover {
+.login-page .button-row .button-container .game:hover {
   background-color: #ffa0c0;
-  height: 65px;
-  width: 235px;
+  transform: scale(1.05);
 }
-.login-page .button-container .join {
+.login-page .button-row .button-container .join {
   background-color: #ffc567;
-  margin-left: 10px;
   transition-duration: 0.2s;
 }
-.login-page .button-container .join:hover {
+.login-page .button-row .button-container .join:hover {
   background-color: #ffd48f;
-  height: 65px;
-  width: 235px;
+  transform: scale(1.05);
 }
 .login-page .join-container {
   display: flex;
@@ -241,6 +251,32 @@ html {
   width: 135px;
 }
 
+@media (max-width: 600px) {
+  .login-page .title {
+    font-size: 14vw;
+  }
+  .login-page .image .img-login {
+    width: 100px;
+  }
+  .login-page .name {
+    width: 100vw;
+    padding: 10px;
+  }
+  .login-page .name input {
+    width: 90vw;
+    margin-right: 20px;
+  }
+  .login-page .button-row .button-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
+  .login-page .button-row .button-container button {
+    width: 100%;
+    margin: 10px;
+  }
+}
 .cell-component {
   border-radius: 10px;
   display: flex;

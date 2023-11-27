@@ -46,25 +46,42 @@ export default class GameClueRepository implements IRepository<Object>, IGameClu
 
     public async GetGameClueByGameId(gameId: number): Promise<Object | null> {
         try {
-			const { data, error } = await this._supabase
-				.from(TABLE)
-				.select(`
-                *,
-                games (*),
-                users_coords (*)
+            const { data, error } = await this._supabase
+                .from(TABLE)
+                .select(`
+                    *,
+                    games (*),
+                    users_coords (*)
                 `)
-			if (error) {
-				throw new Error(`Error fetching games: ${error.message}`);
-			}
-			return data[0];
-		} catch (error) {
-			console.error('Error in GetGameByCode:', error);
-			throw error;
-		}
+                .eq('game_id', gameId)
+            if (error) {
+                throw new Error(`Error fetching games: ${error.message}`);
+            }
+            return data[0];
+        } catch (error) {
+            console.error('Error in GetGameByCode:', error);
+            throw error;
+        }
     }
 
     public async GetGameClueByUserCoordId(userCoordId: number): Promise<Object | null> {
-        throw new Error("Method not implemented.");
+        try {
+            const { data, error } = await this._supabase
+                .from(TABLE)
+                .select(`
+                    *,
+                    games (*),
+                    users_coords (*)
+                `)
+                .eq('user_coord_id', userCoordId)
+            if (error) {
+                throw new Error(`Error fetching games: ${error.message}`);
+            }
+            return data[0];
+        } catch (error) {
+            console.error('Error in GetGameByCode:', error);
+            throw error;
+        }
     }
 
     //#endregion
