@@ -1,30 +1,26 @@
 .user-container {
     background-color: #058CD7;
     position: absolute;
-    //left: 0;
-    //top: 0;
-    padding: 20px 40px;
-    width: 10vw;
+    padding: 2% 4%;
+    padding-top: 1%;
+    height: 15vh;
+    width: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    //border-radius: 0 0 20px 0;
 
     .icon {
         background-color: rgb(255, 255, 255, 0.4);
         border-radius: 50%;
-        width: 150px;
-        height: 150px;
         display: flex;
         justify-content: center;
         align-items: center;
+
     }
 
     .user-coord {
         background-color: #FFC567;
-        width: 100px;
-        height: 100px;
-        font-size: 64px;
+        font-size: 48px;
         border-radius: 10px;
         margin-top: -45px;
         display: flex;

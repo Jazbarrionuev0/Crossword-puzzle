@@ -12,6 +12,14 @@ const Login = () => {
     setUsername(randomUserName)
   }, [])
 
+  const handleCreateGame = () => {
+    console.log('create game');
+  }
+
+  const handleJoineGame = () => {
+    console.log('join game');
+  }
+
 
   return (
     <main className="login-page">
@@ -40,6 +48,7 @@ const Login = () => {
         <div className="button-container">
           <button
             className='game'
+            onClick={handleCreateGame}
           >crear sala</button>
           <button
             className='join'
@@ -51,7 +60,7 @@ const Login = () => {
         isJoin &&
         <section className='join-container'>
           <input maxLength={4} type="text" placeholder='CODE'/>
-          <button className='join-button'>Join</button>
+          <button className='join-button' onClick={handleJoineGame}>Join</button>
         </section>
       }
 

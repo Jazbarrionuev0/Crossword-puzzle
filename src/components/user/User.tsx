@@ -19,8 +19,9 @@ const User = ({ username, userCoord, mainUser, style, icon }: Props) => {
                 <Image
                     src={icon}
                     alt={""}
-                    width={150}
-                    height={150}
+                    width={120}
+                    height={120}
+                    className="img"
                 />
 
             </div>

@@ -1,8 +1,8 @@
 .cells-container {
     display: grid;
-    grid-template-columns: repeat(6, 100px); /* 6 columnas con igual ancho */
-    grid-template-rows: repeat(6, 100px); /* 6 filas con igual altura */
-    //gap: 10px; /* Espacio entre las celdas */
+    grid-template-columns: repeat(6, 1fr); /* 6 columnas con igual ancho */
+    grid-template-rows: repeat(6, 1fr); /* 6 filas con igual altura */
+    gap: 10px; /* Espacio entre las celdas */
     width: 100%; /* Ancho total del contenedor */
     height: 100%; /* Altura total del contenedor */
     //padding: 10px;

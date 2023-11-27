@@ -13,6 +13,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background: linear-gradient(180deg, #552CB7 0%, #FFC567 100%);
 
     .main-left {
         flex-grow: 1;
@@ -25,11 +26,11 @@
         .clue-btn {
             animation: breath 3s infinite;
             background-color: #fb7da8;
-            width: 200px;
-            height: 200px;
+            width: 10vw;
+            height: 10vw;
             border-radius: 50%;
             border: none;
-            font-size: 65px;
+            font-size: 4vw;
             cursor: pointer;
             transition: 0.2s;
             font-family: inherit;
@@ -71,8 +72,9 @@
             display: flex;
             flex-direction: column;
             background-color: rgb(255, 255, 255, 0.1);
-            width: 800px;
+            width: 60vw;
             border-radius: 40px;
+            padding: 15px;
 
             .up {
                 display: flex;
@@ -81,6 +83,10 @@
             }
             .down {
                 display: flex;
+
+                .right {
+                    width: 100%;
+                }
             }
         }
     }
