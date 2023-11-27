@@ -39,6 +39,8 @@ export type Word = {
     word: string
 }
 
+export type Table = Coord | Game | GameClue | User | UserCoord | UserGame | Word
+
 export type UserInfo = {
     username: string,
     coord: string

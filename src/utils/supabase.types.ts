@@ -12,17 +12,14 @@ export interface Database {
       coords: {
         Row: {
           coord: string
-          created_at: string
           id: number
         }
         Insert: {
           coord: string
-          created_at?: string
           id?: number
         }
         Update: {
           coord?: string
-          created_at?: string
           id?: number
         }
         Relationships: []
@@ -30,7 +27,6 @@ export interface Database {
       games: {
         Row: {
           code: string
-          created_at: string
           failed: number
           guessed: number
           id: number
@@ -38,7 +34,6 @@ export interface Database {
         }
         Insert: {
           code: string
-          created_at?: string
           failed?: number
           guessed?: number
           id?: number
@@ -46,7 +41,6 @@ export interface Database {
         }
         Update: {
           code?: string
-          created_at?: string
           failed?: number
           guessed?: number
           id?: number
@@ -56,19 +50,16 @@ export interface Database {
       }
       games_clues: {
         Row: {
-          created_at: string
           game_id: number
           id: number
           user_coord_id: number
         }
         Insert: {
-          created_at?: string
           game_id: number
           id?: number
           user_coord_id: number
         }
         Update: {
-          created_at?: string
           game_id?: number
           id?: number
           user_coord_id?: number
@@ -92,17 +83,14 @@ export interface Database {
       }
       users: {
         Row: {
-          created_at: string
           id: number
           name: string | null
         }
         Insert: {
-          created_at?: string
           id?: number
           name?: string | null
         }
         Update: {
-          created_at?: string
           id?: number
           name?: string | null
         }
@@ -111,19 +99,16 @@ export interface Database {
       users_coords: {
         Row: {
           coord_id: number
-          created_at: string
           id: number
           user_id: number
         }
         Insert: {
           coord_id: number
-          created_at?: string
           id?: number
           user_id: number
         }
         Update: {
           coord_id?: number
-          created_at?: string
           id?: number
           user_id?: number
         }
@@ -146,19 +131,16 @@ export interface Database {
       }
       users_games: {
         Row: {
-          created_at: string
           game_id: number
           id: number
           user_id: number
         }
         Insert: {
-          created_at?: string
           game_id: number
           id?: number
           user_id: number
         }
         Update: {
-          created_at?: string
           game_id?: number
           id?: number
           user_id?: number
@@ -182,17 +164,14 @@ export interface Database {
       }
       words: {
         Row: {
-          created_at: string
           id: number
           word: string
         }
         Insert: {
-          created_at?: string
           id?: number
           word: string
         }
         Update: {
-          created_at?: string
           id?: number
           word?: string
         }
