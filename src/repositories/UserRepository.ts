@@ -1,13 +1,12 @@
 import supabase from "@/utils/supabase";
 import { User } from "@/types/types";
 import { IRepository } from "./interfaces/IRepository";
-import { IUserRepository } from "./interfaces/IUserRepository";
 import { Delete, Edit, GetAll, GetById, GetByIds, Insert } from "./Repository";
 
 const TABLE = 'users';
 type Object = User
 
-export default class UserRepository implements IRepository<Object>, IUserRepository<Object> {
+export default class UserRepository implements IRepository<Object> {
     private _supabase;
 
     constructor() {
@@ -40,13 +39,5 @@ export default class UserRepository implements IRepository<Object>, IUserReposit
         await Delete(this._supabase, TABLE, id);
     }
     
-    //#endregion
-
-    //#region IUserRepository
-
-    public async GetUserByName(name: string): Promise<User | null> {
-        throw new Error("Method not implemented.");
-    }
-
     //#endregion
 }

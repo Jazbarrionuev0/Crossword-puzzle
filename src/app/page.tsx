@@ -3,6 +3,7 @@ import CellContainer from "@/components/cells-container/CellsContainer";
 import Score from "@/components/score/Score";
 import UserContainer from "@/components/users-container/UserContainer";
 import WordsContainer from "@/components/words-container/WordsContainer";
+import { handleClue } from "@/services/game";
 import { Score as ScoreType, UserInfo } from "@/types/types";
 import { getRandomCode } from "@/utils/functions";
 import dynamic from "next/dynamic";
@@ -15,7 +16,7 @@ const Home = () => {
   return (
     <main className="root-page">
       <div className="main-left">
-        <button className="clue-btn" onClick={() => alert('clue')}>CLUE</button>
+        <button className="clue-btn" onClick={handleClue}>CLUE</button>
       </div>
       <div className="center">
         <div className="room-game">

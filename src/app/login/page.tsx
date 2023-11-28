@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { userNames, randomUserName } from '@/utils/userNames'
 import LoopIcon from '@mui/icons-material/Loop';
 import Image from 'next/image';
+import { handleCreateGame, handleJoineGame } from '@/services/login';
 
 const Login = () => {
 
@@ -12,15 +13,6 @@ const Login = () => {
   useEffect(() => {
     setUsername(randomUserName)
   }, [])
-
-  const handleCreateGame = () => {
-    console.log('create game');
-  }
-
-  const handleJoineGame = () => {
-    console.log('join game');
-  }
-
 
   return (
     <main className="login-page">
