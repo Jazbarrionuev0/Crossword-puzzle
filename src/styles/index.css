@@ -66,6 +66,7 @@
 .root-page .center .room-id {
   padding-left: 10px;
   font-size: 35px;
+  color: #FFF;
 }
 .root-page .center .tablero {
   display: flex;
@@ -127,7 +128,6 @@
   position: relative;
 }
 .login-page .image .img-login {
-  width: 200px;
   border-radius: 50%;
 }
 .login-page .image .random-img {
@@ -264,7 +264,7 @@
     font-size: 14vw;
   }
   .login-page .image .img-login {
-    width: 100px;
+    width: 50px;
   }
   .login-page .name {
     width: 100vw;
@@ -371,12 +371,15 @@
   justify-content: center;
   align-items: center;
 }
+.user-container .icon img {
+  border-radius: 50%;
+}
 .user-container .user-coord {
   padding: 5px;
   background-color: #FFC567;
   font-size: 48px;
   border-radius: 10px;
-  margin-top: -45px;
+  margin-top: -25px;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import { userNames, randomUserName } from '@/utils/userNames'
 import LoopIcon from '@mui/icons-material/Loop';
+import Image from 'next/image';
 
 const Login = () => {
 
@@ -25,7 +26,13 @@ const Login = () => {
     <main className="login-page">
       <section className='title'><p>CROSSWORD</p> <p>PUZZLES</p></section>
       <section className='image'>
-        <img className='img-login' src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/LEGO_logo.svg/768px-LEGO_logo.svg.png" alt="" />
+        <Image 
+          alt='' 
+          src={`https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/LEGO_logo.svg/768px-LEGO_logo.svg.png`}
+          className='img-login'
+          width={120}
+          height={120}
+        />
         <div className='random-img'><LoopIcon className='icon'/></div>
       </section>
       <section className='name'>

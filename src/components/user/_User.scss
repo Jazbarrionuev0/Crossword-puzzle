@@ -16,6 +16,10 @@
         justify-content: center;
         align-items: center;
 
+        img {
+            border-radius: 50%;
+        }
+
     }
 
     .user-coord {
@@ -23,7 +27,7 @@
         background-color: #FFC567;
         font-size: 48px;
         border-radius: 10px;
-        margin-top: -45px;
+        margin-top: -25px;
         display: flex;
         justify-content: center;
         align-items: center;

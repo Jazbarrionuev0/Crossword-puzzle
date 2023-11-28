@@ -7,10 +7,10 @@ interface Props {
 }
 
 let icons = [
-    `https://icon-library.com/images/avatar-icon/avatar-icon-8.jpg`,
-    `https://icon-library.com/images/avatar-icon/avatar-icon-6.jpg`,
-    `https://icon-library.com/images/avatar-icon/avatar-icon-13.jpg`,
-    `https://icon-library.com/images/avatar-icon/avatar-icon-7.jpg`
+    `https://api.dicebear.com/7.x/big-ears-neutral/svg?seed=Midnight`,
+    `https://api.dicebear.com/7.x/big-ears-neutral/svg?seed=Misty`,
+    `https://api.dicebear.com/7.x/big-ears-neutral/svg?seed=Annie`,
+    `https://api.dicebear.com/7.x/big-ears-neutral/svg?seed=Snickers`
 ]
 
 const UserContainer: React.FC<Props> = ({ users }) => {

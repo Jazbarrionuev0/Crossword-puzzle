@@ -14,6 +14,7 @@
         justify-content: center;
         align-items: center;
         font-size: 80px;
+        
         p {
             color: white;
             text-shadow: 4px 1px 1px black;
@@ -27,7 +28,7 @@
         position: relative;
 
         .img-login {
-            width: 200px;
+            //width: 200px;
             border-radius: 50%;
         }
         .random-img {
@@ -175,7 +176,7 @@
 
         .image {
             .img-login {
-                width: 100px
+                width: 50px
             }
         }
 
