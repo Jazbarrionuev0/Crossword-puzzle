@@ -72,6 +72,7 @@
   flex-direction: column;
   background-color: rgba(255, 255, 255, 0.1);
   width: 60vw;
+  height: 80vh;
   border-radius: 40px;
   padding: 15px;
 }
@@ -79,9 +80,11 @@
   display: flex;
   width: 100%;
   justify-content: flex-end;
+  margin-bottom: 10px;
 }
 .root-page .center .tablero .down {
   display: flex;
+  height: 100%;
 }
 .root-page .center .tablero .down .right {
   width: 100%;
@@ -294,7 +297,7 @@
   transition-duration: 0.2s;
 }
 .cell-component:hover {
-  color: rgb(0, 0, 0);
+  background-color: rgb(48, 43, 43);
 }
 
 .cells-container {
@@ -356,7 +359,6 @@
   position: absolute;
   padding: 2% 4%;
   padding-top: 1%;
-  height: 15vh;
   width: 100px;
   display: flex;
   flex-direction: column;
@@ -370,6 +372,7 @@
   align-items: center;
 }
 .user-container .user-coord {
+  padding: 5px;
   background-color: #FFC567;
   font-size: 48px;
   border-radius: 10px;
@@ -404,6 +407,9 @@
   text-transform: uppercase;
   font-weight: bold;
   opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .word0 {
@@ -433,8 +439,8 @@
 .words-container-component {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: 2fr 1fr;
-  gap: 8px; /* Adjust the gap between grid items as needed */
+  grid-template-rows: 60px 1fr;
+  gap: 8px;
   width: 100%;
   margin-left: 200px;
 }

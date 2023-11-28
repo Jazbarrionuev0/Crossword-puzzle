@@ -73,6 +73,7 @@
             flex-direction: column;
             background-color: rgb(255, 255, 255, 0.1);
             width: 60vw;
+            height: 80vh;
             border-radius: 40px;
             padding: 15px;
 
@@ -80,9 +81,11 @@
                 display: flex;
                 width: 100%;
                 justify-content: flex-end;
+                margin-bottom: 10px;
             }
             .down {
                 display: flex;
+                height: 100%;
 
                 .right {
                     width: 100%;

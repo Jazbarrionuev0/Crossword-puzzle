@@ -3,7 +3,7 @@
     position: absolute;
     padding: 2% 4%;
     padding-top: 1%;
-    height: 15vh;
+    //height: 15vh;
     width: 100px;
     display: flex;
     flex-direction: column;
@@ -19,6 +19,7 @@
     }
 
     .user-coord {
+        padding: 5px;
         background-color: #FFC567;
         font-size: 48px;
         border-radius: 10px;
