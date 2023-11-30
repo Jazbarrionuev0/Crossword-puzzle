@@ -5,7 +5,7 @@ import UserContainer from "@/components/users-container/UserContainer";
 import WordsContainer from "@/components/words-container/WordsContainer";
 import { handleClue } from "@/services/game";
 import { Score as ScoreType, UserInfo } from "@/types/types";
-import { getRandomCode } from "@/utils/functions";
+
 import dynamic from "next/dynamic";
 
 const Home = () => {
@@ -19,10 +19,6 @@ const Home = () => {
         <button className="clue-btn" onClick={handleClue}>CLUE</button>
       </div>
       <div className="center">
-        <div className="room-game">
-          <p>ROOM</p>
-          <p className="room-id">{getRandomCode()}</p>
-        </div>
         <section className="tablero">
           <div className="up">
             <WordsContainer orientation={true} words={words} />

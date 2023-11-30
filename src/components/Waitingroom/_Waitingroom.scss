@@ -1,0 +1,51 @@
+.waitingroom-component {
+    background: rgb(251,125,168);
+    background: linear-gradient(180deg, rgba(251,125,168,1) 35%, rgba(255,197,103,1) 100%);
+    width: 300PX;
+    border-radius: 30px;
+    text-align: center;
+    margin: 20px;
+    padding: 10px;
+    .game-code {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        margin: 20px;
+        background-color: #fff8fa3b;
+        border-radius: 20px;
+        font-size: 30px;
+
+        .code-id {
+            padding-left: 10px;
+            font-size: 35px;
+            color: #FFF;
+        }
+    }
+    
+    .waiting-title {
+        margin: 10px;
+        font-size: 25px;
+    }
+    
+    .players {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin: 20px;
+        font-size: 30px;
+        color: white;
+    }
+    .start-button {
+        margin: 10px;
+        button {
+            background-color: #26A349;
+            margin: 20px;
+            &:hover {
+                background-color: #3ad165;
+            }
+
+    }
+}
+}

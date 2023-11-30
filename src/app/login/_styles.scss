@@ -6,6 +6,7 @@
     justify-content: center;
     width: 100vw;
     height: 100vh;
+    position: relative;
 
     .title {
         width: 100%;
@@ -53,22 +54,6 @@
         justify-content: center;
         align-items: center;
 
-        input {
-            height: 60px;
-            width: 500px;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.332);
-            background-color: rgba(255, 255, 255, 0.16);
-            text-indent: 10px;
-            color: rgb(255, 255, 255);
-            font-size: 30px;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-        input::placeholder {
-            font-weight: lighter;
-            font-size: 20px;
-        }
     }
 
     .button-row {
@@ -84,43 +69,23 @@
             width: 500px;
         align-items: start;
         
-        button {
-            height: 60px;
-            width: 230px;
-            border-radius: 15px;
-            font-size: 30px;
-            font-weight: bold;
-            font-family: inherit;
-            text-transform: uppercase;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            &:hover {
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            }
-        }
         .game {
             background-color: #fb7da8;
-            //margin-right: 10px;
             transition-duration: 0.2s;
-        }
-        .game:hover {
-            background-color: #ffa0c0;
-            transform: scale(1.05);
-            //height: 65px;
-            //width: 235px;
+            &:hover {
+                background-color: #ffa0c0;
+                transform: scale(1.05);
+            }
         }
         .join {
             background-color: #ffc567;
-            //margin-left: 10px;
             transition-duration: 0.2s;
+            &:hover {
+                background-color: #ffd48f;
+                transform: scale(1.05);
+            }
         }
-        .join:hover {
-            background-color: #ffd48f;
-            transform: scale(1.05);
-            //height: 65px;
-            //width: 235px;
-        }
+        
     }
 }
     
@@ -132,39 +97,24 @@
             height: 70px;
             width: 150px;
             text-align: center;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.332);
-            background-color: rgba(255, 255, 255, 0.16);
-            text-indent: 10px;
-            color: rgb(255, 255, 255);
-            font-size: 30px;
-            font-weight: bold;
-            text-transform: uppercase;
         }
-        input::placeholder {
-            font-weight: lighter;
-            font-size: 20px;
-        }
+        
         button {
             background-color: #552CB7;
             margin-left: 10px;
-            transition-duration: 0.2s;
             height: 70px;
             width: 130px;
-            border-radius: 15px;
-            font-size: 30px;
-            font-weight: bold;
-            font-family: inherit;
-            text-transform: uppercase;
-            border: none;
             cursor: pointer;
-
+            &:hover {
+                background-color: #6a4ab6;
+                height: 65px;
+                width: 135px;
+            }
         }
-        button:hover {
-            background-color: #6a4ab6;
-            height: 65px;
-            width: 135px;
-        }
+    }
+    .waiting-room {
+        position: absolute;
+        right:  0;
     }
 }
 

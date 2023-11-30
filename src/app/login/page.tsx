@@ -4,6 +4,7 @@ import { userNames, randomUserName } from '@/utils/userNames'
 import LoopIcon from '@mui/icons-material/Loop';
 import Image from 'next/image';
 import { handleCreateGame, handleJoineGame } from '@/services/login';
+import Waitingroom from '@/components/Waitingroom/Waitingroom';
 
 const Login = () => {
 
@@ -62,7 +63,9 @@ const Login = () => {
           <button className='join-button' onClick={handleJoineGame}>Join</button>
         </section>
       }
-
+         <div className='waiting-room'>
+           <Waitingroom />
+        </div>
     </main>
   )
 }

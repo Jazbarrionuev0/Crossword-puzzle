@@ -1,0 +1,28 @@
+/* Add this CSS to your styles file (e.g., styles.css) */
+
+@keyframes spinning {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+      }
+  }
+  @keyframes rotateClock {
+    40%, 100% {transform: rotate(0deg);}
+    50%, 90% {transform: rotate(180deg);}
+  }
+  .sandclock-component {
+    /* Add other styles for your component here */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    /* Apply the animation */
+    //animation: rotateClock 2s linear infinite; /* Adjust the duration and other properties as needed */
+    .icon {
+        width: 20px;
+        height: 20px;
+        margin: 5px;
+        animation: rotateClock 2s linear infinite;
+    }
+  }
