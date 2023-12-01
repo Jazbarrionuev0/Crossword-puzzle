@@ -15,3 +15,19 @@ export let coords: string[] = [
     "A5","B5","C5","D5","E5","F5",
     "A6","B6","C6","D6","E6","F6",
 ]
+
+export const getRandomCoord = (prevCoords?: string[]): string | null => {
+    
+    if (prevCoords == undefined) {
+        return coords[Math.floor(Math.random() * coords.length)];
+    }
+
+    const availableCoords = coords.filter(coord => !prevCoords.includes(coord));
+
+    if (availableCoords.length === 0) {
+      return null;
+    }
+  
+    const randomIndex = Math.floor(Math.random() * availableCoords.length);
+    return availableCoords[randomIndex];
+}
