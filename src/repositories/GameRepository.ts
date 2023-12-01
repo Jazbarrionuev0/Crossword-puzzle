@@ -191,5 +191,22 @@ export default class GameRepository implements IRepository<Object>, IGameReposit
 		}
 	}
 
+	public async Create(): Promise<Object> {
+		try {
+			const { data, error } = await this._supabase
+				.from(TABLE)
+				.insert({code: 'TEST'})
+				.select()
+
+			if (error) {
+				throw new Error(`Error inserting data: ${error.message}`);
+			}
+			return data[0]
+		} catch (error) {
+			console.error('Error in insert:');
+			throw error;
+		}
+	}
+
 	//#endregion
 }

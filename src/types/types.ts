@@ -19,7 +19,8 @@ export type GameClue = {
 
 export type User = {
     id: number,
-    name: string
+    name: string,
+    avatar: string
 }
 
 export type UserCoord = {

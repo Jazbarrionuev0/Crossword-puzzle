@@ -84,15 +84,18 @@ export interface Database {
       users: {
         Row: {
           id: number
-          name: string | null
+          name: string | null,
+          avatar: string
         }
         Insert: {
           id?: number
-          name?: string | null
+          name?: string | null,
+          avatar: string
         }
         Update: {
           id?: number
-          name?: string | null
+          name?: string | null,
+          avatar: string
         }
         Relationships: []
       }

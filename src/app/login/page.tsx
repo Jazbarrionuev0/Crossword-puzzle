@@ -8,8 +8,16 @@ import Waitingroom from '@/components/Waitingroom/Waitingroom';
 
 const Login = () => {
 
-  const [username, setUsername] = useState('')
-  const [isJoin, setIsJoin] = useState(false)
+  const [username, setUsername] = useState<string>('')
+  const [avatar, setAvatar] = useState<string>(`https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/LEGO_logo.svg/768px-LEGO_logo.svg.png`)
+  const [isJoin, setIsJoin] = useState<boolean>(false)
+  const [isWaiting, setIsWaiting] = useState<boolean>(false)
+
+  let baseURL = `https://api.dicebear.com/7.x/big-ears-neutral/svg?seed=`
+
+  let seeds = [
+
+  ]
 
   useEffect(() => {
     setUsername(randomUserName)
@@ -19,28 +27,27 @@ const Login = () => {
     <main className="login-page">
       <section className='title'><p>CROSSWORD</p> <p>PUZZLES</p></section>
       <section className='image'>
-        <Image 
-          alt='' 
-          src={`https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/LEGO_logo.svg/768px-LEGO_logo.svg.png`}
+        <Image
+          alt=''
+          src={avatar}
           className='img-login'
           width={120}
           height={120}
         />
-        <div className='random-img'><LoopIcon className='icon'/></div>
+        <div className='random-img' onClick={() => {
+
+          alert("cambiar avatar")
+          
+        }}><LoopIcon className='icon' /></div>
       </section>
       <section className='name'>
         <input
           type="text"
           value={username}
           onClick={() => {
-            if (userNames.includes(username)) {
-              console.log('tes')
-              setUsername('')
-            }
+            if (userNames.includes(username)) setUsername('')
           }}
-          onChange={(e) => {
-            setUsername(e.target.value)
-          }}
+          onChange={(e) => setUsername(e.target.value)}
           placeholder='PLAYER GAME'
         />
       </section>
@@ -48,7 +55,10 @@ const Login = () => {
         <div className="button-container">
           <button
             className='game'
-            onClick={handleCreateGame}
+            onClick={async () => {
+              await handleCreateGame(username)
+              setIsWaiting(true)
+            }}
           >crear sala</button>
           <button
             className='join'
@@ -59,13 +69,19 @@ const Login = () => {
       {
         isJoin &&
         <section className='join-container'>
-          <input maxLength={4} type="text" placeholder='CODE'/>
-          <button className='join-button' onClick={handleJoineGame}>Join</button>
+          <input maxLength={4} type="text" placeholder='CODE' />
+          <button className='join-button' onClick={() => {
+            handleJoineGame()
+            setIsWaiting(true)
+          }}>Join</button>
         </section>
       }
-         <div className='waiting-room'>
-           <Waitingroom />
+      {
+        isWaiting &&
+        <div className='waiting-room'>
+          <Waitingroom />
         </div>
+      }
     </main>
   )
 }

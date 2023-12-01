@@ -33,3 +33,5 @@ class WordRepository implements IRepository<Word> {
     }
     
 }
+
+export default WordRepository
