@@ -9,15 +9,29 @@ import Waitingroom from '@/components/Waitingroom/Waitingroom';
 const Login = () => {
 
   const [username, setUsername] = useState<string>('')
-  const [avatar, setAvatar] = useState<string>(`https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/LEGO_logo.svg/768px-LEGO_logo.svg.png`)
   const [isJoin, setIsJoin] = useState<boolean>(false)
   const [isWaiting, setIsWaiting] = useState<boolean>(false)
 
-  let baseURL = `https://api.dicebear.com/7.x/big-ears-neutral/svg?seed=`
+  let baseURL = `https://api.dicebear.com/7.x/adventurer-neutral/svg?seed=`
 
   let seeds = [
+    'Miss%20kitty',
+    'Sasha',
+    'Mimi',
+    'Bella',
+    'Peanut',
+    'Mittens',
+    'Spooky',
+    'Charlie'
+  ];
 
-  ]
+  const [seedIndex, setSeedIndex] = useState(0);
+  const [avatar, setAvatar] = useState(`${baseURL}${seeds[seedIndex]}`);
+
+  const changeAvatar = () => {
+    setSeedIndex((prevIndex) => (prevIndex + 1) % seeds.length);
+    setAvatar(`${baseURL}${seeds[seedIndex]}`);
+  }
 
   useEffect(() => {
     setUsername(randomUserName)
@@ -34,11 +48,8 @@ const Login = () => {
           width={120}
           height={120}
         />
-        <div className='random-img' onClick={() => {
-
-          alert("cambiar avatar")
-          
-        }}><LoopIcon className='icon' /></div>
+        <div className='random-img' onClick={changeAvatar}>
+          <LoopIcon className='icon' /></div>
       </section>
       <section className='name'>
         <input
