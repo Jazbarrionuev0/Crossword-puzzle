@@ -1,15 +1,17 @@
-"use client"
-
-import React from 'react'
-import { getRandomCode } from "@/utils/functions";
+import BtnStartGame from '../BtnStartGame/BtnStartGame';
 import Sandclock from '../Sandclock/Sandclock';
+import UsersLis from '../UsersList/UsersList';
 
-const Waitingroom = () => {
+type Props = {
+  code: string
+}
+
+const Waitingroom:React.FC<Props> = ({code}) => {
   return (
     <div className='waitingroom-component'>
         <div className="game-code">
           <p>CODE</p>
-          <p className="code-id">{'hby'}</p>
+          <p className="code-id">{code}</p>
         </div>
         <div className="waiting-title">
             <p>WAITING FOR PLAYERS</p>
@@ -17,14 +19,11 @@ const Waitingroom = () => {
             
         </div>
         <div className="players">
-            <div>PLAYER1</div>
-            <div>PLAYER2</div> 
-            <div>PLAYER2</div> 
-            <div>PLAYER2</div> 
+            <UsersLis />
             
         </div>
         <div className="start-button">
-            <button>START GAME</button>
+            <BtnStartGame />
         </div>
     </div>
   )

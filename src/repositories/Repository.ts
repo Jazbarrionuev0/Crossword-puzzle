@@ -1,3 +1,4 @@
+import { ITable } from "@/types/database";
 import { Table } from "@/types/types";
 import { SupabaseClient } from "@supabase/supabase-js";
 
@@ -50,14 +51,16 @@ export const GetByIds =  async (supabaseClient: SupabaseClient, tableName: strin
 	}
 }
 
-export const Insert = async (supabaseClient: SupabaseClient, tableName: string, object: Table) => {
+export const Insert = async (supabaseClient: SupabaseClient, tableName: string, object: ITable): Promise<Table> => {
 	try {
 		const { data, error } = await supabaseClient
 			.from(tableName)
-			.insert(object);
+			.insert(object)
+			.select()
 		if (error) {
 			throw new Error(`Error inserting data: ${error.message}`);
 		}
+		return data[0]
 	} catch (error) {
 		console.error('Error in insert:');
 		throw error;

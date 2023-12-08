@@ -1,28 +1,18 @@
 import GameRepository from "@/repositories/GameRepository";
 import UserRepository from "@/repositories/UserRepository";
-import { Game, User } from "@/types/types";
-import { getRandomCoord } from "@/utils/coords";
-import { getRandomCode } from "@/utils/functions";
+import { IUser } from "@/types/database";
+import { Game, GameUser, User } from "@/types/types";
 
-export const handleCreateGame = async (username:string) => {
-    // create a new instance of GameRepository
-     //let gameRepository = new GameRepository()
-     //let userRepository = new UserRepository()
+let gameRepository = new GameRepository()
+let userRepository = new UserRepository()
 
-    // use the method Create() to create a new game
-    // retrieve the response and store it in a variable
-     //let game: Game = await gameRepository.Create()
-
-     //create a user
-     //let user:User = {id: 0, name: username, avatar: ''}
-
-     //userRepository.Insert
-
-     // create a random coord
-
-     //let coord = getRandomCoord()
+export const createGame = async ({ avatar, name }: IUser): Promise<void> => {
+    let game: Game = await gameRepository.Create()
+    let user: User = await userRepository.Insert({ avatar, name })
 }
 
-export const handleJoineGame = () => {
-    alert('join game');
+export const joinGame = async (code:string): Promise<boolean> => {
+    let game: Game | null = await gameRepository.GetGameByCode(code)
+    if (game != null) return false
+    else return true
 }

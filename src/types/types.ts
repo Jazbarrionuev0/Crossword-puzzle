@@ -52,3 +52,18 @@ export type Score = {
     failed: number,
     round: number
 }
+
+export type WordsAxis = { 
+    wordsX: string[], 
+    wordsY: string[] 
+}
+
+export type UserAvatar = {
+    name: string,
+    avatar: string
+}
+
+export type GameUser = {
+    game: Game,
+    user: User
+}

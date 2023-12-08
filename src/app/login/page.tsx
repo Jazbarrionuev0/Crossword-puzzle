@@ -3,27 +3,18 @@ import React, { useEffect, useState } from 'react'
 import { userNames, randomUserName } from '@/utils/userNames'
 import LoopIcon from '@mui/icons-material/Loop';
 import Image from 'next/image';
-import { handleCreateGame, handleJoineGame } from '@/services/login';
+import { createGame, joinGame } from '@/services/login';
 import Waitingroom from '@/components/Waitingroom/Waitingroom';
+import { seeds } from '@/utils/seeds';
 
 const Login = () => {
 
   const [username, setUsername] = useState<string>('')
   const [isJoin, setIsJoin] = useState<boolean>(false)
   const [isWaiting, setIsWaiting] = useState<boolean>(false)
+  const [code, setCode] = useState<string>('')
 
   let baseURL = `https://api.dicebear.com/7.x/adventurer-neutral/svg?seed=`
-
-  let seeds = [
-    'Miss%20kitty',
-    'Sasha',
-    'Mimi',
-    'Bella',
-    'Peanut',
-    'Mittens',
-    'Spooky',
-    'Charlie'
-  ];
 
   const [seedIndex, setSeedIndex] = useState(0);
   const [avatar, setAvatar] = useState(`${baseURL}${seeds[seedIndex]}`);
@@ -48,11 +39,12 @@ const Login = () => {
           width={120}
           height={120}
         />
-        <div className='random-img' onClick={changeAvatar}>
+        <div className={`random-img ${isWaiting ? 'disabled' : ''}`} onClick={changeAvatar}>
           <LoopIcon className='icon' /></div>
       </section>
       <section className='name'>
         <input
+          disabled={isWaiting}
           type="text"
           value={username}
           onClick={() => {
@@ -65,13 +57,15 @@ const Login = () => {
       <section className='button-row'>
         <div className="button-container">
           <button
+          disabled={isWaiting}
             className='game'
             onClick={async () => {
-              await handleCreateGame(username)
+              await createGame({avatar,name:username})
               setIsWaiting(true)
             }}
           >crear sala</button>
           <button
+          disabled={isWaiting}
             className='join'
             onClick={() => setIsJoin(prev => !prev)}
           >unirse a sala</button>
@@ -80,17 +74,23 @@ const Login = () => {
       {
         isJoin &&
         <section className='join-container'>
-          <input maxLength={4} type="text" placeholder='CODE' />
-          <button className='join-button' onClick={() => {
-            handleJoineGame()
-            setIsWaiting(true)
+          <input maxLength={4} type="text" placeholder='CODE' value={code} onChange={(e) => setCode(e.target.value)}/>
+          <button className='join-button' onClick={async () => {
+            let error = await joinGame(code)
+            if (error) {
+              alert('codigo invalido')
+            }
+            else {
+              setIsWaiting(true)
+              setIsJoin(false)
+            }
           }}>Join</button>
         </section>
       }
       {
         isWaiting &&
         <div className='waiting-room'>
-          <Waitingroom />
+          <Waitingroom code={code}/>
         </div>
       }
     </main>

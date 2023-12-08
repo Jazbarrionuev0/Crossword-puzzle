@@ -3,9 +3,12 @@ import { UserGame } from "@/types/types";
 import { IRepository } from "./interfaces/IRepository";
 import { IUserGameRepository } from "./interfaces/IUserGameRepository";
 import { Delete, Edit, GetAll, GetById, GetByIds, Insert } from "./Repository";
+import { IUserGame } from "@/types/database";
 
 const TABLE = 'users_games';
 type Object = UserGame
+type IObject = IUserGame
+
 
 export default class UserGameRepository implements IRepository<Object>, IUserGameRepository<Object> {
     private _supabase;
@@ -28,8 +31,20 @@ export default class UserGameRepository implements IRepository<Object>, IUserGam
         return await GetByIds(this._supabase, TABLE, ids);
     }
 
-    public async Insert(object: Object): Promise<void> {
-        await Insert(this._supabase, TABLE, object);
+    public async Insert(object: IObject): Promise<Object> {
+        try {
+            const { data, error } = await this._supabase
+                .from(TABLE)
+                .insert(object)
+                .select()
+            if (error) {
+                throw new Error(`Error inserting data: ${error.message}`);
+            }
+            return data[0]
+        } catch (error) {
+            console.error('Error in insert:');
+            throw error;
+        }
     }
 
     public async Edit(id: number, updatedObject: Object): Promise<void> {

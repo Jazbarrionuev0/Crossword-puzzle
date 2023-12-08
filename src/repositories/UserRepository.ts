@@ -1,10 +1,12 @@
 import supabase from "@/utils/supabase";
-import { User } from "@/types/types";
+import { Table, User } from "@/types/types";
 import { IRepository } from "./interfaces/IRepository";
 import { Delete, Edit, GetAll, GetById, GetByIds, Insert } from "./Repository";
+import { IUser } from "@/types/database";
 
 const TABLE = 'users';
 type Object = User
+type IObject = IUser
 
 export default class UserRepository implements IRepository<Object> {
     private _supabase;
@@ -27,8 +29,20 @@ export default class UserRepository implements IRepository<Object> {
         return await GetByIds(this._supabase, TABLE, ids);
     }
 
-    public async Insert(object: Object): Promise<void> {
-        await Insert(this._supabase, TABLE, object);
+    public async Insert(object: IObject): Promise<Object> {
+        try {
+            const { data, error } = await this._supabase
+                .from(TABLE)
+                .insert(object)
+                .select()
+            if (error) {
+                throw new Error(`Error inserting data: ${error.message}`);
+            }
+            return data[0]
+        } catch (error) {
+            console.error('Error in insert:');
+            throw error;
+        }
     }
 
     public async Edit(id: number, updatedObject: Object): Promise<void> {

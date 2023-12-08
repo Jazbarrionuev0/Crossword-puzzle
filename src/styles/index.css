@@ -176,6 +176,10 @@ input::placeholder {
 .login-page .image .random-img .icon:hover {
   font-size: 36px;
 }
+.login-page .image .random-img.disabled {
+  pointer-events: none;
+  opacity: 0.7;
+}
 .login-page .name {
   height: 10vh;
   display: flex;

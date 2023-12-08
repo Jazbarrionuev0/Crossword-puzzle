@@ -1,7 +1,8 @@
-import { Word } from "@/types/types";
+import { Word, WordsAxis } from "@/types/types";
 import { IRepository } from "./interfaces/IRepository";
 import { Delete, Edit, GetAll, GetById, GetByIds, Insert } from "./Repository";
 import supabase from "@/utils/supabase";
+import { getRandomStringPairs } from "@/utils/functions";
 
 const TABLE = 'words';
 
@@ -23,7 +24,7 @@ class WordRepository implements IRepository<Word> {
         return await GetByIds(this._supabase,TABLE, id);
     }
     public async Insert(object: Word):Promise<void> {
-        return await Insert(this._supabase,TABLE, object);
+        await Insert(this._supabase,TABLE, object);
     }
     public async Edit(id: number, updatedObject: Word): Promise<void> {
         return await Edit(this._supabase,TABLE, id, updatedObject);
@@ -31,7 +32,25 @@ class WordRepository implements IRepository<Word> {
     public async Delete(id: number): Promise<void> {
         return await Delete(this._supabase,TABLE, id);
     }
-    
+
+    public async GetSixWords():Promise<WordsAxis> {
+        try {
+            const { data, error } = await this._supabase
+                .from(TABLE)
+                .select('word')
+
+            if (error) {
+                throw new Error(`Error fetching data: ${error.message}`);
+            }
+            let words:string[] = data.map(({word}) => word);
+            const randomStrings = getRandomStringPairs(words);
+            return randomStrings
+
+        } catch (error) {
+            console.error('Error in getAll:', error);
+            throw error;
+        }
+    }
 }
 
 export default WordRepository
