@@ -195,13 +195,30 @@ export default class GameRepository implements IRepository<Object>, IGameReposit
 		try {
 			const { data, error } = await this._supabase
 				.from(TABLE)
-				.insert({code: 'TEST'})
+				.insert({ code: 'TEST' })
 				.select()
 
 			if (error) {
 				throw new Error(`Error inserting data: ${error.message}`);
 			}
 			return data[0]
+		} catch (error) {
+			console.error('Error in insert:');
+			throw error;
+		}
+	}
+
+	public async Count(code:string): Promise<number> {
+		try {
+			const { error, count } = await this._supabase
+				.from(TABLE)
+				.select('*', { count: 'exact', head: true })
+				.eq('code', code)
+
+			if (error) {
+				throw new Error(`Error inserting data: ${error.message}`);
+			}
+			return count ?? 0
 		} catch (error) {
 			console.error('Error in insert:');
 			throw error;

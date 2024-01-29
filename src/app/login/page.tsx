@@ -1,14 +1,15 @@
 'use client'
-import React, { useEffect, useState } from 'react'
-import { userNames, randomUserName } from '@/utils/userNames'
-import LoopIcon from '@mui/icons-material/Loop';
 import Image from 'next/image';
-import { createGame, joinGame } from '@/services/login';
+import LoopIcon from '@mui/icons-material/Loop';
 import Waitingroom from '@/components/Waitingroom/Waitingroom';
 import { seeds } from '@/utils/seeds';
+import { createGame, joinGame } from '@/services/login';
+import { userNames, randomUserName } from '@/utils/userNames'
+import { Suspense, useEffect, useState } from 'react'
+import Sandclock from '@/components/Sandclock/Sandclock';
+import BtnStartGame from '@/components/BtnStartGame/BtnStartGame';
 
 const Login = () => {
-
   const [username, setUsername] = useState<string>('')
   const [isJoin, setIsJoin] = useState<boolean>(false)
   const [isWaiting, setIsWaiting] = useState<boolean>(false)
@@ -16,7 +17,7 @@ const Login = () => {
 
   let baseURL = `https://api.dicebear.com/7.x/adventurer-neutral/svg?seed=`
 
-  const [seedIndex, setSeedIndex] = useState(0);
+  const [seedIndex, setSeedIndex] = useState(1);
   const [avatar, setAvatar] = useState(`${baseURL}${seeds[seedIndex]}`);
 
   const changeAvatar = () => {
@@ -60,7 +61,8 @@ const Login = () => {
           disabled={isWaiting}
             className='game'
             onClick={async () => {
-              await createGame({avatar,name:username})
+              let code = await createGame({avatar,name:username})
+              setCode(code)
               setIsWaiting(true)
             }}
           >crear sala</button>
@@ -74,11 +76,10 @@ const Login = () => {
       {
         isJoin &&
         <section className='join-container'>
-          <input maxLength={4} type="text" placeholder='CODE' value={code} onChange={(e) => setCode(e.target.value)}/>
+          <input maxLength={4} type="text" placeholder='CODE' value={code} onChange={(e) => setCode(e.target.value)} />
           <button className='join-button' onClick={async () => {
-            let error = await joinGame(code)
+            let error = await joinGame(code,{avatar,name:username})
             if (error) {
-              alert('codigo invalido')
             }
             else {
               setIsWaiting(true)
@@ -90,7 +91,25 @@ const Login = () => {
       {
         isWaiting &&
         <div className='waiting-room'>
-          <Waitingroom code={code}/>
+          <Suspense fallback={
+            <div className='waitingroom-component'>
+            <div className="game-code">
+              <p>CODE</p>
+              <p className="code-id">{code}</p>
+            </div>
+            <div className="waiting-title">
+              <p>WAITING FOR PLAYERS</p>
+              <div><Sandclock /> </div>
+            </div>
+            <div className="players">
+            </div>
+            <div className="start-button">
+              <BtnStartGame />
+            </div>
+          </div>
+          }>
+            <Waitingroom code={code.toUpperCase()}/>
+          </Suspense>
         </div>
       }
     </main>

@@ -463,6 +463,7 @@ input::placeholder {
   text-align: center;
   margin: 20px;
   padding: 10px;
+  transition-duration: 0.2s;
 }
 .waitingroom-component .game-code {
   display: flex;
@@ -498,6 +499,7 @@ input::placeholder {
 .waitingroom-component .start-button button {
   background-color: #26A349;
   margin: 20px;
+  transition-duration: 0.2s;
 }
 .waitingroom-component .start-button button:hover {
   background-color: #3ad165;

@@ -1,8 +1,14 @@
+import { startGame } from '@/services/login'
+import { User } from '@/types/types'
 import React from 'react'
 
-const BtnStartGame = () => {
+type Props = {
+  users: User[]
+}
+
+const BtnStartGame:React.FC<Props> = ({users}) => {
   return (
-    <button onClick={()=>alert('start game')}>START GAME</button>
+    <button onClick={async () => await startGame(users)}>START GAME</button>
   )
 }
 

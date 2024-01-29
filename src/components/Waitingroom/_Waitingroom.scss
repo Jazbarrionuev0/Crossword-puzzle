@@ -6,6 +6,8 @@
     text-align: center;
     margin: 20px;
     padding: 10px;
+    transition-duration: .2s;
+    
     .game-code {
         display: flex;
         flex-direction: row;
@@ -42,6 +44,7 @@
         button {
             background-color: #26A349;
             margin: 20px;
+            transition-duration: .2s;
             &:hover {
                 background-color: #3ad165;
             }
